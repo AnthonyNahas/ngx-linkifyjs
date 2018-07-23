@@ -12,8 +12,11 @@ export class NgxLinkifyjsService {
     return linkify.find(text);
   }
 
-  test(value: string) {
-    return linkify.test(value);
+  test(value: string | string[]): boolean {
+    if (typeof value === 'string') {
+      return linkify.test(value);
+    }
+    return linkify.test(...value);
   }
 
 }

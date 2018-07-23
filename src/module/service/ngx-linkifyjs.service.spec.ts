@@ -14,8 +14,14 @@ describe('LibService', () => {
     expect(service).toBeTruthy();
   }));
 
+  // find function
+
   it('should always return an array after finding a link', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
     expect(service.find('Any links to github.com here?')).toBeInstanceOf(Array);
+  }));
+
+  it('should return an empty array if no links are provided', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    expect(service.find('Any links to github here?').length).toEqual(0);
   }));
 
   it('should find a link', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
@@ -51,5 +57,15 @@ describe('LibService', () => {
     );
 
     expect(result.length).toEqual(2);
+  }));
+
+  // test function
+
+  it('should return true only if a link is provided', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    expect(service.test('github.com')).toBeTruthy();
+  }));
+
+  it('should return false when the array does not contain only links', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    expect(service.test(['github.com', 'email'])).toBeFalsy();
   }));
 });

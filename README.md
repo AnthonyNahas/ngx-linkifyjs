@@ -39,30 +39,30 @@ map: {
 
 Once installed you need to import the main module:
 ```js
-import { LibModule } from 'ngx-linkifyjs';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 ```
 The only remaining part is to list the imported module in your application module. The exact method will be slightly
-different for the root (top-level) module for which you should end up with the code similar to (notice ` LibModule .forRoot()`):
+different for the root (top-level) module for which you should end up with the code similar to (notice ` NgxLinkifyjsModule .forRoot()`):
 ```js
-import { LibModule } from 'ngx-linkifyjs';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 @NgModule({
   declarations: [AppComponent, ...],
-  imports: [LibModule.forRoot(), ...],  
+  imports: [NgxLinkifyjsModule.forRoot(), ...],  
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
 ```
 
-Other modules in your application can simply import ` LibModule `:
+Other modules in your application can simply import ` NgxLinkifyjsModule `:
 
 ```js
-import { LibModule } from 'ngx-linkifyjs';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 @NgModule({
   declarations: [OtherComponent, ...],
-  imports: [LibModule, ...], 
+  imports: [NgxLinkifyjsModule, ...], 
 })
 export class OtherModule {
 }

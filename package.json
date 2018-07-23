@@ -18,7 +18,13 @@
     "library",
     "linkifyjs",
     "links",
-    "find-links"
+    "find-links",
+    "autolink",
+    "text",
+    "url",
+    "email",
+    "hashtags",
+    "mentionsm"
   ],
   "bugs": {
     "url": "https://github.com/anthonynahas/ngx-linkifyjs/issues"

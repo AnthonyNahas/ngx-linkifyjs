@@ -1,5 +1,11 @@
 import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
+// @ts-ignore
+import * as linkify from 'linkifyjs';
+// @ts-ignore
+import * as hashtag from 'linkifyjs/plugins/hashtag';
+// @ts-ignore
+import * as mention from 'linkifyjs/plugins/mention';
 
 import {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 import {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
@@ -19,6 +25,10 @@ export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 })
 export class NgxLinkifyjsModule {
   static forRoot(): ModuleWithProviders {
+
+    hashtag(linkify);
+    mention(linkify);
+
     return {
       ngModule: NgxLinkifyjsModule,
       providers: [NgxLinkifyjsService]

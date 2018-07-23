@@ -1,9 +1,19 @@
 import {inject, TestBed} from '@angular/core/testing';
 
+// @ts-ignore
+import * as linkify from 'linkifyjs';
+// @ts-ignore
+import * as hashtag from 'linkifyjs/plugins/hashtag';
+
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
 import {Link, LinkType} from '../..';
 
 describe('LibService', () => {
+
+  beforeAll(() => {
+    hashtag(linkify);
+  });
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [NgxLinkifyjsService]

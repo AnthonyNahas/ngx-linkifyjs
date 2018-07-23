@@ -15,10 +15,10 @@ export { LibService } from './service/lib.service';
   exports: [LibComponent],
   declarations: [LibComponent]
 })
-export class LibModule {
+export class NgxLinkifyjsModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: LibModule,
+      ngModule: NgxLinkifyjsModule,
       providers: [LibService]
     };
   }

@@ -131,7 +131,11 @@
       "codelyzer",
       "@angular/animations",
       "linkifyjs",
-      "@types/jasmine"
+      "@types/jasmine",
+      "@types/jest",
+      "@types/node",
+      "conventional-github-releaser",
+      "rollup-plugin-uglify"
     ]
   },
   "commitplease": {

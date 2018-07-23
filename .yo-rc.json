@@ -1,0 +1,41 @@
+{
+  "generator-ngx-library": {
+    "version": "6.2.1",
+    "authorName": "Anthony Nahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "anthonynahas",
+    "githubRepoName": "ngx-linkifyjs",
+    "projectName": "ngx-linkifyjs",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Angular V6 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML <a> tags via linkifyjs",
+    "projectKeywords": [
+      "ngx",
+      "angular",
+      "library",
+      "linkifyjs",
+      "links",
+      "find-links"
+    ],
+    "ngVersion": "6.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [
+      "linkifyjs"
+    ],
+    "additionalPackageFiles": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "ngx",
+    "testingFramework": "jest",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "config/karma.conf.js",
+      "config/webpack.test.js",
+      "config/karma-test-shim.js"
+    ],
+    "deleteExclusions": []
+  }
+}

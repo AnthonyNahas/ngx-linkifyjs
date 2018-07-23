@@ -1,25 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {NgModule, ModuleWithProviders} from '@angular/core';
 
-import { LibComponent } from './component/lib.component';
-import { LibService } from './service/lib.service';
+import {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
+import {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 
 // Export module's public API
-export { LibComponent } from './component/lib.component';
-export { LibService } from './service/lib.service';
+export {Link} from './interfaces/ngx-linkifyjs.interface';
+export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
+export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  exports: [LibComponent],
-  declarations: [LibComponent]
+  exports: [NgxLinkifyjsPipe],
+  declarations: [NgxLinkifyjsPipe]
 })
 export class NgxLinkifyjsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgxLinkifyjsModule,
-      providers: [LibService]
+      providers: [NgxLinkifyjsService]
     };
   }
 }

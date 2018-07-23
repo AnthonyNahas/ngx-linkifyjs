@@ -27,6 +27,13 @@ describe('LibService', () => {
     expect(service).toBeTruthy();
   }));
 
+  // linkify function
+  it('should linkify the provided text - 1 link and 1 email', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: string = service.linkify('For help with GitHub.com, please email support@github.com');
+    expect(result).toEqual('For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
+      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>');
+  }));
+
   // find function
 
   it('should always return an array after finding a link', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {

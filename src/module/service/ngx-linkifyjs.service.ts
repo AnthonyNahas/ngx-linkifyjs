@@ -8,6 +8,11 @@ export class NgxLinkifyjsService {
   constructor() {
   }
 
+  linkify(text: string): string {
+    // @ts-ignore
+    return text.linkify();
+  }
+
   find(text: string): Array<Link> {
     return linkify.find(text);
   }

@@ -6,6 +6,7 @@ import {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 
 // Export module's public API
 export {Link} from './interfaces/ngx-linkifyjs.interface';
+export {LinkType} from './enum/linktype.enum';
 export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 

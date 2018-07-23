@@ -1,4 +1,5 @@
 export enum LinkType {
   URL = 'url',
-  HASHTAG = 'hashtag'
+  HASHTAG = 'hashtag',
+  MENTION = 'mention',
 }

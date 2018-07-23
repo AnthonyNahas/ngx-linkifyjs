@@ -4,6 +4,8 @@ import {inject, TestBed} from '@angular/core/testing';
 import * as linkify from 'linkifyjs';
 // @ts-ignore
 import * as hashtag from 'linkifyjs/plugins/hashtag';
+// @ts-ignore
+import * as mention from 'linkifyjs/plugins/mention';
 
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
 import {Link, LinkType} from '../..';
@@ -12,6 +14,7 @@ describe('LibService', () => {
 
   beforeAll(() => {
     hashtag(linkify);
+    mention(linkify);
   });
 
   beforeEach(() => {
@@ -82,6 +85,26 @@ describe('LibService', () => {
           type: LinkType.HASHTAG,
           value: '#rad2015',
           href: '#rad2015'
+        }
+      ]
+    );
+
+    expect(result.length).toEqual(2);
+  }));
+
+  it('should find 2 mention links', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: Link[] = service.find('Linkify needs @you and @someone else');
+    expect(result).toEqual(
+      [
+        {
+          type: LinkType.MENTION,
+          value: '@you',
+          href: '/you'
+        },
+        {
+          type: LinkType.MENTION,
+          value: '@someone',
+          href: '/someone'
         }
       ]
     );

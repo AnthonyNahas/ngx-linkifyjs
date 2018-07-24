@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+import {NgxLinkifyjsService, Link} from 'ngx-linkifyjs';
 import sdk from '@stackblitz/sdk';
 
 @Component({
@@ -9,10 +10,29 @@ import sdk from '@stackblitz/sdk';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private titleService:Title) { }
+  example1 = `Hi, I'm Anthony Nahas, the developer of ngx-linkifyjs. You can find this project on
+              github here: https://github.com/anthonynahas/ngx-linkifyjs and the demo app with this
+              link: https://anthonynahas.github.io/ngx-linkifyjs. Please feel free to contact me here @ anthony.na@hotmail.de
+              if you have any question or troubles with this package. Thank you <3`;
+
+  example2 = 'Output...';
+
+  foundLinks: Link[] = [];
+
+  testLinkResult: boolean;
+  testLinkRequested: boolean;
+
+  constructor(private titleService: Title,
+              public linkifyService: NgxLinkifyjsService) {
+  }
 
   ngOnInit() {
     this.titleService.setTitle('Home | ngx-linkifyjs');
+    // const result: Link[] = this.linkifyService.find('Linkify is #super #rad2015');
+    // console.log('links = ', result);
+
+    // const result2: string = this.linkifyService.linkify('For help with GitHub.com, please email support@github.com');
+    // console.log('links2 = ', result2);
   }
 
   editOnStackBlitz() {

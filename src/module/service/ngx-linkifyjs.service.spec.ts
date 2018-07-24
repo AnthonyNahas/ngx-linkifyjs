@@ -1,5 +1,4 @@
 import {inject, TestBed} from '@angular/core/testing';
-
 // @ts-ignore
 import * as linkify from 'linkifyjs';
 // @ts-ignore
@@ -72,6 +71,26 @@ describe('LibService', () => {
           type: LinkType.URL,
           value: 'https://github.com/AnthonyNahas',
           href: 'https://github.com/AnthonyNahas'
+        }
+      ]
+    );
+
+    expect(result.length).toEqual(2);
+  }));
+
+  it('should find 1 url link and 1 email', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: Link[] = service.find('Any links to github.com here? If not, contact test@example.com');
+    expect(result).toEqual(
+      [
+        {
+          type: LinkType.URL,
+          value: 'github.com',
+          href: 'http://github.com'
+        },
+        {
+          type: LinkType.EMAIL,
+          value: 'test@example.com',
+          href: 'mailto:test@example.com'
         }
       ]
     );

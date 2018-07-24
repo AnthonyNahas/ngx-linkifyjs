@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "es5",
     "outDir": "../tmp/lib-es5/",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "",
     "types": []
   },

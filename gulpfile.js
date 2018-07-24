@@ -381,9 +381,14 @@ gulp.task('rollup-bundle', (cb) => {
         // Add any other dependency or peer dependency of your library here
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
-        'linkifyjs': _.camelCase('linkifyjs'.replace('/', '.'))
-
+        'linkifyjs': _.camelCase('linkifyjs'.replace('/', '.')),
+        'linkifyjs/string': _.camelCase('linkifyjs/string'.replace('/', '.')),
+        'inkifyjs/plugins/hashtag': _.camelCase('inkifyjs/plugins/hashtag'.replace('/', '.')),
+        // 'linkifyjs/plugins/hashtag': 'hashtag',
       };
+
+      console.log("globals = ", globals);
+
       const rollupBaseConfig = {
         output: {
           name: _.camelCase(config.libraryName),

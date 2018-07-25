@@ -8,13 +8,12 @@ import {NgxLinkifyjsService} from 'ngx-linkifyjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  
-   testLinkResult: boolean;
-   testLinkRequested: boolean;
-
+    
   constructor(public linkifyService: NgxLinkifyjsService) {
+    this.linkifyService.test('github.com'); // return true
+    this.linkifyService.test('dev@example.com'); // return true
+    this.linkifyService.test(['github.com', 'email']); // return false
+    this.linkifyService.test('helloWorld'); // return false
   }
-  
 }
-
 ```

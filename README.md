@@ -16,7 +16,7 @@
 [![license](https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE)
 
 <p align="center">
-  <img alt="ngx-linkifyjs demo" width="256px" style="text-align: center;" 
+  <img alt="ngx-linkifyjs demo" width="320px" style="text-align: center;" 
   src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/assets/demo.gif">
 </p>
 

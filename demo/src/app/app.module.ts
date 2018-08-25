@@ -22,6 +22,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule.withServerTransition({appId: 'ngx-linkifyjs-demo-id'}),
     MarkdownModule.forRoot({loader: HttpClient}),
     NgbModule.forRoot(),
+    MarkdownModule.forRoot(),
     TransferHttpCacheModule,
     FormsModule,
     HttpClientModule,

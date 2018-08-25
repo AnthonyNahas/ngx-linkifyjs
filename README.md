@@ -208,6 +208,7 @@ export class HomeComponent {
 }
 ```
 
+take a look @ [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview) which is using `ngx-linkifyjs`
 
 ## Run Demo App Locally
 
@@ -268,6 +269,7 @@ $ npm run lint
 - [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui)
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
+- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
@@ -285,6 +287,14 @@ $ npm run lint
 + let us chat on [Gitter](https://gitter.im/angular-material-extensions/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
+
+---
+
+---
+
+![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+
+This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
 ---
 

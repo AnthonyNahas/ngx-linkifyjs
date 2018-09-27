@@ -11,6 +11,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MarkdownModule} from 'ngx-markdown';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,6 +25,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-linkifyjs-demo-id'}),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     MarkdownModule.forRoot({loader: HttpClient}),
     NgbModule.forRoot(),
     MarkdownModule.forRoot(),

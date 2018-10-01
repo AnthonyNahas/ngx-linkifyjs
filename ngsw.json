@@ -1,0 +1,93 @@
+{
+  "configVersion": 1,
+  "index": "/ngx-linkifyjs/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ngx-linkifyjs/0.682734a032e73ef33cf3.js",
+        "/ngx-linkifyjs/favicon.ico",
+        "/ngx-linkifyjs/index.html",
+        "/ngx-linkifyjs/main.4c19e171147207854ff0.js",
+        "/ngx-linkifyjs/polyfills.92108b287fe28032870b.js",
+        "/ngx-linkifyjs/runtime.826cafbd3c31f4769d86.js",
+        "/ngx-linkifyjs/scripts.388def289e0115aa6226.js",
+        "/ngx-linkifyjs/styles.f47bb5383110c36b945f.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ngx-linkifyjs/assets/.npmignore",
+        "/ngx-linkifyjs/assets/icons/icon-128x128.png",
+        "/ngx-linkifyjs/assets/icons/icon-144x144.png",
+        "/ngx-linkifyjs/assets/icons/icon-152x152.png",
+        "/ngx-linkifyjs/assets/icons/icon-192x192.png",
+        "/ngx-linkifyjs/assets/icons/icon-384x384.png",
+        "/ngx-linkifyjs/assets/icons/icon-512x512.png",
+        "/ngx-linkifyjs/assets/icons/icon-72x72.png",
+        "/ngx-linkifyjs/assets/icons/icon-96x96.png",
+        "/ngx-linkifyjs/assets/logo.svg",
+        "/ngx-linkifyjs/assets/md/e1/html.md",
+        "/ngx-linkifyjs/assets/md/e1/ts.md",
+        "/ngx-linkifyjs/assets/md/e2/html.md",
+        "/ngx-linkifyjs/assets/md/e2/ts.md",
+        "/ngx-linkifyjs/assets/md/pipe/html.md",
+        "/ngx-linkifyjs/assets/md/service/e3/ts.md",
+        "/ngx-linkifyjs/assets/md/service/e4/ts.md"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ngx-linkifyjs/0.682734a032e73ef33cf3.js": "f7c453f91d39310927b20d1d6ea057a708af61c1",
+    "/ngx-linkifyjs/assets/.npmignore": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "/ngx-linkifyjs/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ngx-linkifyjs/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ngx-linkifyjs/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ngx-linkifyjs/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ngx-linkifyjs/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ngx-linkifyjs/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ngx-linkifyjs/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ngx-linkifyjs/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ngx-linkifyjs/assets/logo.svg": "0b3394341548880427c38ed78beb990863a4e8cb",
+    "/ngx-linkifyjs/assets/md/e1/html.md": "2e5ec6fb8d6f3d3f2894a6586cf868edae2df417",
+    "/ngx-linkifyjs/assets/md/e1/ts.md": "b780a9b6db18b472a69d7863064e21e294136fd7",
+    "/ngx-linkifyjs/assets/md/e2/html.md": "8f9a1e4055e0c3512ef86233946faa6df7c943fe",
+    "/ngx-linkifyjs/assets/md/e2/ts.md": "8e8de6fba276da9e9afcd09c5bfb78f1cf0cace7",
+    "/ngx-linkifyjs/assets/md/pipe/html.md": "eeb2040c0f1665f0c01523c900f4f20ce627b29c",
+    "/ngx-linkifyjs/assets/md/service/e3/ts.md": "20f3c43cd1ec763404cd13c182984952e0a607d8",
+    "/ngx-linkifyjs/assets/md/service/e4/ts.md": "07af6bdcab2c6ab59e7f9a67dafc8cffebba2493",
+    "/ngx-linkifyjs/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/ngx-linkifyjs/index.html": "f865508b2db0c2587154eff62c2f0e033fac1205",
+    "/ngx-linkifyjs/main.4c19e171147207854ff0.js": "120aa572e15676939e99f70a4222793029e314d2",
+    "/ngx-linkifyjs/polyfills.92108b287fe28032870b.js": "32ff103404372406dccb69a68c193ef7bea153c0",
+    "/ngx-linkifyjs/runtime.826cafbd3c31f4769d86.js": "ba0501dcdae2cf9e49b38bdc10e491da65d7698b",
+    "/ngx-linkifyjs/scripts.388def289e0115aa6226.js": "91d95aa2a6ed3aa5ceaf94213504758260ea31c2",
+    "/ngx-linkifyjs/styles.f47bb5383110c36b945f.css": "70090fce891fca3ea73c11d123df5749a19bded6"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

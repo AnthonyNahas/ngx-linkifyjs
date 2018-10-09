@@ -27,6 +27,16 @@ Alternatively, provide a PR | open an appropriate issue [here](https://github.co
 If you like this project, support [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs) 
 by starring :star: and sharing it :loudspeaker:
 
+## Migration from V1 to V2
+Since the first stable release of `angularfire2` has been published within the angular 
+organization, we replaced that module with `@angular/fire`
+
+Before updating `ngx-auth-firebaseui` to V2, please make sure that `angularifre2` has been replaced with `@angular/fire`
+--> 
+```bash
+npm un angularfire2 && npm i @angular/fire 
+```
+
 ## Table of Contents
 - [Demo](#demo)
 - [Features](#features)

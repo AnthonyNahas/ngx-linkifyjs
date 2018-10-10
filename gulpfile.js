@@ -528,14 +528,19 @@ gulp.task('build:demo', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --base-href /ngx-linkifyjs/ --deploy-url /ngx-linkifyjs/`, {cwd: `${config.demoDir}`});
 });
 
+gulp.task('serve:demo-prerender', [], () => {
+  return execCmd('http-server', {cwd: `${config.demoDir}/dist/browser`});
+});
+
 gulp.task('serve:demo-ssr', ['build:demo-ssr'], () => {
   return execExternalCmd('node', 'dist/server.js', {cwd: `${config.demoDir}`});
 });
 
-gulp.task('build:demo-ssr', () => {
-  return execDemoCmd(`build --preserve-symlinks --prod`, {cwd: `${config.demoDir}`})
+gulp.task('build:demo-prerender', () => {
+  return execDemoCmd(`build --preserve-symlinks --prod --base-href /ngx-linkifyjs/ --deploy-url /ngx-linkifyjs/`, {cwd: `${config.demoDir}`})
     .then(() => execDemoCmd(`run ngx-linkifyjs-demo:server`, {cwd: `${config.demoDir}`}))
     .then(() => execCmd('webpack', '--config webpack.server.config.js --progress --colors', {cwd: `${config.demoDir}`}, `/${config.demoDir}`))
+    .then(() => execExternalCmd('node', 'prerender.js', {cwd: `${config.demoDir}/dist`}))
     .catch(e => {
       fancyLog(acolors.red(`build:demo-ssr command failed. See below for errors.\n`));
       fancyLog(acolors.red(e));
@@ -549,6 +554,10 @@ gulp.task('push:demo', () => {
 
 gulp.task('deploy:demo', (cb) => {
   runSequence('build:demo', 'build:doc', 'push:demo', cb);
+});
+
+gulp.task('deploy:demo-prerender', (cb) => {
+  runSequence('build:demo-prerender', 'build:doc', 'push:demo', cb);
 });
 
 

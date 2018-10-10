@@ -7,14 +7,14 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/ngx-linkifyjs/0.682734a032e73ef33cf3.js",
+        "/ngx-linkifyjs/4.c7ac73d044559689bfe7.js",
         "/ngx-linkifyjs/favicon.ico",
         "/ngx-linkifyjs/index.html",
-        "/ngx-linkifyjs/main.4c19e171147207854ff0.js",
-        "/ngx-linkifyjs/polyfills.92108b287fe28032870b.js",
-        "/ngx-linkifyjs/runtime.826cafbd3c31f4769d86.js",
+        "/ngx-linkifyjs/main.8cdd4a9bf59d3bf211d7.js",
+        "/ngx-linkifyjs/polyfills.f6ae3e8b63939c618130.js",
+        "/ngx-linkifyjs/runtime.a7d29675425982a4dd53.js",
         "/ngx-linkifyjs/scripts.388def289e0115aa6226.js",
-        "/ngx-linkifyjs/styles.f47bb5383110c36b945f.css"
+        "/ngx-linkifyjs/styles.e9f93e428b387782c767.css"
       ],
       "patterns": []
     },
@@ -46,7 +46,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/ngx-linkifyjs/0.682734a032e73ef33cf3.js": "f7c453f91d39310927b20d1d6ea057a708af61c1",
+    "/ngx-linkifyjs/4.c7ac73d044559689bfe7.js": "7fe0a8993640fc812aecfded527960c68214bca6",
     "/ngx-linkifyjs/assets/.npmignore": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
     "/ngx-linkifyjs/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/ngx-linkifyjs/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -65,12 +65,12 @@
     "/ngx-linkifyjs/assets/md/service/e3/ts.md": "20f3c43cd1ec763404cd13c182984952e0a607d8",
     "/ngx-linkifyjs/assets/md/service/e4/ts.md": "07af6bdcab2c6ab59e7f9a67dafc8cffebba2493",
     "/ngx-linkifyjs/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/ngx-linkifyjs/index.html": "f865508b2db0c2587154eff62c2f0e033fac1205",
-    "/ngx-linkifyjs/main.4c19e171147207854ff0.js": "120aa572e15676939e99f70a4222793029e314d2",
-    "/ngx-linkifyjs/polyfills.92108b287fe28032870b.js": "32ff103404372406dccb69a68c193ef7bea153c0",
-    "/ngx-linkifyjs/runtime.826cafbd3c31f4769d86.js": "ba0501dcdae2cf9e49b38bdc10e491da65d7698b",
+    "/ngx-linkifyjs/index.html": "c23f975d1bb42fefccb6979321995418b5903ba2",
+    "/ngx-linkifyjs/main.8cdd4a9bf59d3bf211d7.js": "1590b02744e5dacca4ed235cb10cf22c16895832",
+    "/ngx-linkifyjs/polyfills.f6ae3e8b63939c618130.js": "ef2035f0504b4f77eac510c33595c81a5d09e33f",
+    "/ngx-linkifyjs/runtime.a7d29675425982a4dd53.js": "6f56c8aa7aa0d1b183e641ef4d83d74089d159e9",
     "/ngx-linkifyjs/scripts.388def289e0115aa6226.js": "91d95aa2a6ed3aa5ceaf94213504758260ea31c2",
-    "/ngx-linkifyjs/styles.f47bb5383110c36b945f.css": "70090fce891fca3ea73c11d123df5749a19bded6"
+    "/ngx-linkifyjs/styles.e9f93e428b387782c767.css": "3e548602710f9bf5affb01de181457adc6ce6f46"
   },
   "navigationUrls": [
     {

@@ -1,6 +1,6 @@
 {
   "name": "ngx-linkifyjs",
-  "description": "Angular V6 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &lt;a&gt; tags via linkifyjs",
+  "description": "Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &lt;a&gt; tags via linkifyjs",
   "version": "1.0.0",
   "homepage": "https://github.com/anthonynahas/ngx-linkifyjs",
   "author": {

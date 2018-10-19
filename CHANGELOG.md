@@ -1,5 +1,21 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.0.0...v1.1.0) (2018-10-19)
+
+
+### Bug Fixes
+
+* **package:** added tsickle's module to support angular v7 ([990df8c](https://github.com/anthonynahas/ngx-linkifyjs/commit/990df8c))
+
+
+### Features
+
+* **demo:** upgraded the demo app to v7 ([d021f28](https://github.com/anthonynahas/ngx-linkifyjs/commit/d021f28))
+* **project:** supporting angular v7 ([00da028](https://github.com/anthonynahas/ngx-linkifyjs/commit/00da028))
+
+
+
 <a name="1.0.0"></a>
-# 1.0.0 (2018-07-25)
+# [1.0.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/72377a2...v1.0.0) (2018-07-25)
 
 
 ### Features

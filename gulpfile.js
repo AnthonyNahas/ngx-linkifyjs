@@ -528,7 +528,7 @@ gulp.task('build:demo', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --base-href /ngx-linkifyjs/ --deploy-url /ngx-linkifyjs/`, {cwd: `${config.demoDir}`});
 });
 
-gulp.task('serve:demo-prerender', [], () => {
+gulp.task('serve:demo-prerender', ['serve:demo-prerender'], () => {
   return execCmd('http-server', {cwd: `${config.demoDir}/dist/browser`});
 });
 
@@ -689,7 +689,7 @@ gulp.task('release', (cb) => {
       'create-new-tag',
       'github-release',
       'npm-publish',
-      'deploy:demo',
+      'deploy:demo-prerender',
       (error) => {
         if (error) {
           fancyLog(acolors.red(error.message));

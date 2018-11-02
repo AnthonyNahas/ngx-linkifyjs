@@ -542,7 +542,7 @@ gulp.task('build:demo-prerender', () => {
     .then(() => execCmd('webpack', '--config webpack.server.config.js --progress --colors', {cwd: `${config.demoDir}`}, `/${config.demoDir}`))
     .then(() => execExternalCmd('node', 'prerender.js', {cwd: `${config.demoDir}/dist`}))
     .catch(e => {
-      fancyLog(acolors.red(`build:demo-ssr command failed. See below for errors.\n`));
+      fancyLog(acolors.red(`build:demo-prerender command failed. See below for errors.\n`));
       fancyLog(acolors.red(e));
       process.exit(1);
     });

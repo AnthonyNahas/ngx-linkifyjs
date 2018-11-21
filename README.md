@@ -27,15 +27,7 @@ Alternatively, provide a PR | open an appropriate issue [here](https://github.co
 If you like this project, support [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs) 
 by starring :star: and sharing it :loudspeaker:
 
-## Migration from V1 to V2
-Since the first stable release of `angularfire2` has been published within the angular 
-organization, we replaced that module with `@angular/fire`
 
-Before updating `ngx-auth-firebaseui` to V2, please make sure that `angularifre2` has been replaced with `@angular/fire`
---> 
-```bash
-npm un angularfire2 && npm i @angular/fire 
-```
 
 ## Table of Contents
 - [Demo](#demo)
@@ -43,8 +35,8 @@ npm un angularfire2 && npm i @angular/fire
 - [Documentation](#documentation)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Config](#config)
 - [Run Demo App Locally](#run-demo-app-locally)
-- [Development](#development)
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
@@ -62,7 +54,7 @@ View all the directives in action at https://anthonynahas.github.io/ngx-linkifyj
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 6.0.9)
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 7.x)
 
 <a name="installation"/>
 
@@ -91,7 +83,7 @@ import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 ```
 The only remaining part is to list the imported module in your application module. The exact method will be slightly
 different for the root (top-level) module for which you should end up with the code similar to (notice ` NgxLinkifyjsModule .forRoot()`):
-```js
+```typescript
 import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 @NgModule({
@@ -218,6 +210,26 @@ export class HomeComponent {
 }
 ```
 
+<a name="config"/>
+
+#### Enable/Disable the hash and mention
+
+```typescript
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+
+@NgModule({
+  declarations: [AppComponent, ...],
+  imports: [NgxLinkifyjsModule.forRoot(
+                  {
+                    enableHash: false, // optional - default true
+                    enableMention: false // optional - default true
+                  }), ...],  
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
+
 take a look @ [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview) which is using `ngx-linkifyjs`
 
 ## Run Demo App Locally
@@ -228,7 +240,7 @@ $ git clone https://github.com/AnthonyNahas/ngx-linkifyjs.git
 ```
 
 - link the ngx-linkifyjs package
-use gulp globally
+
 ```bash
 $ gulp link
 ```
@@ -253,23 +265,6 @@ $ ng serve --open
 ```
 - the app is now hosted by `http://localhost:4200/`
 
----
-
-<a name="development"/>
-
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
 ---
 
 

@@ -3,3 +3,8 @@ export interface Link {
   value: string,
   href: string,
 }
+
+export interface NgxLinkifyjsConfig {
+  enableHash?: boolean,
+  enableMention?: boolean
+}

@@ -383,7 +383,7 @@ gulp.task('rollup-bundle', (cb) => {
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
         'linkifyjs': _.camelCase('linkifyjs'.replace('/', '.')),
         'linkifyjs/string': _.camelCase('linkifyjs/string'.replace('/', '.')),
-        'inkifyjs/plugins/hashtag': _.camelCase('inkifyjs/plugins/hashtag'.replace('/', '.')),
+        'inkifyjs/plugins/hashtag': _.camelCase('linkifyjsPluginsHashtag'.replace('/', '.')),
         // 'linkifyjs/plugins/hashtag': 'hashtag',
       };
 

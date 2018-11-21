@@ -12,6 +12,8 @@ import {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 
 // Export module's public API
 export {Link} from './interfaces/ngx-linkifyjs.interface';
+import {NgxLinkifyjsConfig} from './interfaces/ngx-linkifyjs.interface';
+
 export {LinkType} from './enum/linktype.enum';
 export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
@@ -25,7 +27,13 @@ export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 })
 export class NgxLinkifyjsModule {
 
-  static forRoot(): ModuleWithProviders {
+  private static DEFAULT_CONFIG: NgxLinkifyjsConfig = {
+    enableHash: true,
+    enableMention: true
+  };
+
+  static forRoot(config?: NgxLinkifyjsConfig): ModuleWithProviders {
+    Object.assign(this.DEFAULT_CONFIG, config);
     return {
       ngModule: NgxLinkifyjsModule,
       providers: [NgxLinkifyjsService]
@@ -33,7 +41,16 @@ export class NgxLinkifyjsModule {
   }
 
   constructor() {
-    hashtag(linkify);
-    // mention(linkify);
+    this._handleConfig();
+  }
+
+  private _handleConfig() {
+    if (NgxLinkifyjsModule.DEFAULT_CONFIG.enableHash) {
+      hashtag(linkify);
+    }
+
+    if (NgxLinkifyjsModule.DEFAULT_CONFIG.enableMention) {
+      mention(linkify);
+    }
   }
 }

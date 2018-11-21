@@ -1,4 +1,12 @@
-<a name="1.1.0"></a>
+# [1.2.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.1.0...v1.2.0) (2018-11-21)
+
+
+### Features
+
+* **package:** ability to enable/disable hashtag and mentions links [#22](https://github.com/anthonynahas/ngx-linkifyjs/issues/22) ([2df2cf9](https://github.com/anthonynahas/ngx-linkifyjs/commit/2df2cf9))
+
+
+
 # [1.1.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.0.0...v1.1.0) (2018-10-19)
 
 
@@ -14,7 +22,6 @@
 
 
 
-<a name="1.0.0"></a>
 # [1.0.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/72377a2...v1.0.0) (2018-07-25)
 
 

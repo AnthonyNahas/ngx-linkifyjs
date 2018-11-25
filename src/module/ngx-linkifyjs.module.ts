@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import {Inject, InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
 // @ts-ignore
 import * as linkify from 'linkifyjs';
 // @ts-ignore
@@ -18,6 +18,8 @@ export {LinkType} from './enum/linktype.enum';
 export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 
+export const NgxLinkifyjsConfigToken = new InjectionToken<NgxLinkifyjsConfig>('NgxLinkifyjsConfig');
+
 @NgModule({
   imports: [
     CommonModule
@@ -32,25 +34,29 @@ export class NgxLinkifyjsModule {
     enableMention: true
   };
 
-  static forRoot(config?: NgxLinkifyjsConfig): ModuleWithProviders {
-    Object.assign(this.DEFAULT_CONFIG, config);
+  static forRoot(config: NgxLinkifyjsConfig = this.DEFAULT_CONFIG): ModuleWithProviders {
     return {
       ngModule: NgxLinkifyjsModule,
-      providers: [NgxLinkifyjsService]
+      providers:
+        [
+          NgxLinkifyjsService,
+          {
+            provide: NgxLinkifyjsConfigToken,
+            useValue: config
+          },
+        ]
     };
   }
 
-  constructor() {
-    this._handleConfig();
-  }
-
-  private _handleConfig() {
-    if (NgxLinkifyjsModule.DEFAULT_CONFIG.enableHash) {
+  constructor(@Inject(NgxLinkifyjsConfigToken)
+              public config: NgxLinkifyjsConfig) {
+    if (config.enableHash) {
       hashtag(linkify);
     }
 
-    if (NgxLinkifyjsModule.DEFAULT_CONFIG.enableMention) {
+    if (config.enableMention) {
       mention(linkify);
     }
   }
+
 }

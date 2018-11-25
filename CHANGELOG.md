@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.2.0...v1.2.1) (2018-11-25)
+
+
+### Bug Fixes
+
+* **package:** removed static config and added config token for DI ([4372e3c](https://github.com/anthonynahas/ngx-linkifyjs/commit/4372e3c))
+
+
+
 # [1.2.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.1.0...v1.2.0) (2018-11-21)
 
 

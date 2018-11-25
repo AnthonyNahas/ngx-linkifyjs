@@ -9,7 +9,38 @@ import * as mention from 'linkifyjs/plugins/mention';
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
 import {Link, LinkType} from '../..';
 
-describe('LibService', () => {
+describe('NgxLinkifyjsService without importing hashtag/mention', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [NgxLinkifyjsService]
+    });
+  });
+
+  it('should create service without importing the hashtag/mention lib', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    expect(service).toBeTruthy();
+  }));
+
+  it('should not find any hashtag links', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: Link[] = service.find('Linkify is #super #rad2015');
+    expect(result).toEqual([]);
+
+    // array
+    expect(Array.isArray(result)).toBe(true);
+    expect(result.length).toEqual(0);
+  }));
+
+  it('should not find any mention links', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: Link[] = service.find('Linkify needs @you and @someone else');
+    expect(result).toEqual([]);
+
+    // array
+    expect(Array.isArray(result)).toBe(true);
+    expect(result.length).toEqual(0);
+  }));
+
+});
+
+describe('NgxLinkifyjsService', () => {
 
   beforeAll(() => {
     hashtag(linkify);
@@ -152,3 +183,5 @@ describe('LibService', () => {
     expect(service.test(['github.com', 'email'])).toBeFalsy();
   }));
 });
+
+

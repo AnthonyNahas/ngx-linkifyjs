@@ -1778,8 +1778,8 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
     const IDLE_THRESHOLD = 5000;
     const SUPPORTED_CONFIG_VERSION = 1;
     const NOTIFICATION_OPTION_NAMES = [
-        'actions', 'badge', 'body', 'dir', 'icon', 'lang', 'renotify', 'requireInteraction', 'tag',
-        'vibrate', 'data'
+        'actions', 'badge', 'body', 'data', 'dir', 'icon', 'image', 'lang', 'renotify',
+        'requireInteraction', 'silent', 'tag', 'timestamp', 'title', 'vibrate'
     ];
     var DriverReadyState;
     (function (DriverReadyState) {
@@ -1848,9 +1848,22 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             // The activate event is triggered when this version of the service worker is
             // first activated.
             this.scope.addEventListener('activate', (event) => {
-                // As above, it's safe to take over from existing clients immediately, since
-                // the new SW version will continue to serve the old application.
-                event.waitUntil(this.scope.clients.claim());
+                event.waitUntil((() => __awaiter$5(this, void 0, void 0, function* () {
+                    // As above, it's safe to take over from existing clients immediately, since the new SW
+                    // version will continue to serve the old application.
+                    yield this.scope.clients.claim();
+                    // Once all clients have been taken over, we can delete caches used by old versions of
+                    // `@angular/service-worker`, which are no longer needed. This can happen in the background.
+                    this.idle.schedule('activate: cleanup-old-sw-caches', () => __awaiter$5(this, void 0, void 0, function* () {
+                        try {
+                            yield this.cleanupOldSwCaches();
+                        }
+                        catch (err) {
+                            // Nothing to do - cleanup failed. Just log it.
+                            this.debugger.log(err, 'cleanupOldSwCaches @ activate: cleanup-old-sw-caches');
+                        }
+                    }));
+                }))());
                 // Rather than wait for the first fetch event, which may not arrive until
                 // the next time the application is loaded, the SW takes advantage of the
                 // activation event to schedule initialization. However, if this were run
@@ -1869,6 +1882,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             this.scope.addEventListener('fetch', (event) => this.onFetch(event));
             this.scope.addEventListener('message', (event) => this.onMessage(event));
             this.scope.addEventListener('push', (event) => this.onPush(event));
+            this.scope.addEventListener('notificationclick', (event) => this.onClick(event));
             // The debugger generates debug pages in response to debugging requests.
             this.debugger = new DebugHandler(this, this.adapter);
             // The IdleScheduler will execute idle tasks after a given delay.
@@ -1966,6 +1980,10 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             // Handle the push and keep the SW alive until it's handled.
             msg.waitUntil(this.handlePush(msg.data.json()));
         }
+        onClick(event) {
+            // Handle the click event and keep the SW alive until it's handled.
+            event.waitUntil(this.handleClick(event.notification, event.action));
+        }
         handleMessage(msg, from) {
             return __awaiter$5(this, void 0, void 0, function* () {
                 if (isMsgCheckForUpdates(msg)) {
@@ -1991,6 +2009,20 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 NOTIFICATION_OPTION_NAMES.filter(name => desc.hasOwnProperty(name))
                     .forEach(name => options[name] = desc[name]);
                 yield this.scope.registration.showNotification(desc['title'], options);
+            });
+        }
+        handleClick(notification, action) {
+            return __awaiter$5(this, void 0, void 0, function* () {
+                notification.close();
+                const options = {};
+                // The filter uses `name in notification` because the properties are on the prototype so
+                // hasOwnProperty does not work here
+                NOTIFICATION_OPTION_NAMES.filter(name => name in notification)
+                    .forEach(name => options[name] = notification[name]);
+                yield this.broadcast({
+                    type: 'NOTIFICATION_CLICK',
+                    data: { action, notification: options },
+                });
             });
         }
         reportStatus(client, promise, nonce) {
@@ -2512,6 +2544,18 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
                 }), Promise.resolve());
                 // Commit all the changes to the saved state.
                 yield this.sync();
+            });
+        }
+        /**
+         * Delete caches that were used by older versions of `@angular/service-worker` to avoid running
+         * into storage quota limitations imposed by browsers.
+         * (Since at this point the SW has claimed all clients, it is safe to remove those caches.)
+         */
+        cleanupOldSwCaches() {
+            return __awaiter$5(this, void 0, void 0, function* () {
+                const cacheNames = yield this.scope.caches.keys();
+                const oldSwCacheNames = cacheNames.filter(name => /^ngsw:(?:active|staged|manifest:.+)$/.test(name));
+                yield Promise.all(oldSwCacheNames.map(name => this.scope.caches.delete(name)));
             });
         }
         /**

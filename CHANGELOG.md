@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.2.1...v1.2.2) (2018-11-26)
+
+
+### Bug Fixes
+
+* **package:** removed static access in the module's initialization ([1ea56dc](https://github.com/anthonynahas/ngx-linkifyjs/commit/1ea56dc))
+
+
+
 ## [1.2.1](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.2.0...v1.2.1) (2018-11-25)
 
 

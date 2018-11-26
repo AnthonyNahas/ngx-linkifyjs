@@ -10,7 +10,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
-    NgxLinkifyjsModule.forRoot({enableHash: false}),
+    NgxLinkifyjsModule.forRoot(),
     MarkdownModule.forChild(),
     HomeRoutingModule,
     NgbModule,

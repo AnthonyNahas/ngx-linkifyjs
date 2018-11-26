@@ -19,6 +19,7 @@ export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 
 export const NgxLinkifyjsConfigToken = new InjectionToken<NgxLinkifyjsConfig>('NgxLinkifyjsConfig');
+export const DEFAULT_CONFIG: NgxLinkifyjsConfig = {enableHash: true, enableMention: true};
 
 @NgModule({
   imports: [
@@ -29,12 +30,7 @@ export const NgxLinkifyjsConfigToken = new InjectionToken<NgxLinkifyjsConfig>('N
 })
 export class NgxLinkifyjsModule {
 
-  private static DEFAULT_CONFIG: NgxLinkifyjsConfig = {
-    enableHash: true,
-    enableMention: true
-  };
-
-  static forRoot(config: NgxLinkifyjsConfig = this.DEFAULT_CONFIG): ModuleWithProviders {
+  static forRoot(config: NgxLinkifyjsConfig = DEFAULT_CONFIG): ModuleWithProviders {
     return {
       ngModule: NgxLinkifyjsModule,
       providers:

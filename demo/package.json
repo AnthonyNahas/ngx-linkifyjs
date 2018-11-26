@@ -34,7 +34,7 @@
     "@angular/platform-browser": "^7.0.4",
     "@angular/platform-browser-dynamic": "^7.0.4",
     "@angular/platform-server": "^7.0.4",
-    "@angular/pwa": "^0.10.6",
+    "@angular/pwa": "^0.10.7",
     "@angular/router": "^7.0.4",
     "@angular/service-worker": "^7.0.4",
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
@@ -49,9 +49,9 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.6",
-    "@angular-devkit/build-optimizer": "^0.10.6",
-    "@angular/cli": "^7.0.6",
+    "@angular-devkit/build-angular": "^0.10.7",
+    "@angular-devkit/build-optimizer": "^0.10.7",
+    "@angular/cli": "^7.1.0",
     "@angular/compiler-cli": "^7.0.4",
     "@angular/language-service": "^7.0.4",
     "@angularclass/hmr": "~2.1.3",

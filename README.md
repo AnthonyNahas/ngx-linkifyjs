@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-linkifyjs/demo/src/assets/logo.svg">
 </p>
 
 # ngx-linkifyjs - Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &lt;a&gt; tags via linkifyjs
@@ -17,7 +17,7 @@
 
 <p align="center">
   <img alt="ngx-linkifyjs demo" width="320px" style="text-align: center;" 
-  src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/assets/demo.gif">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-linkifyjs/assets/demo.gif">
 </p>
 
 ## Built by and for developers :heart:

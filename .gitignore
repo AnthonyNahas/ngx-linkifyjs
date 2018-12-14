@@ -7,6 +7,7 @@ Thumbs.DB
 node_modules
 bower_components
 demo/dist/*
+.idea
 
 # Logs
 logs

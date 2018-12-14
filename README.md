@@ -61,11 +61,12 @@ View all the directives in action at https://anthonynahas.github.io/ngx-linkifyj
 <a name="installation"/>
 
 ## Installation
+
 Install above dependencies via *npm*. 
 
 Now install `ngx-linkifyjs` via:
 ```shell
-npm install --save ngx-linkifyjs
+npm i -s ngx-linkifyjs
 ```
 
 ---
@@ -138,7 +139,19 @@ constructor(public linkifyService: NgxLinkifyjsService) {
 }
 ```
 
-#### `linkify` method
+<a name="linkify_method"/>
+
+#### linkify _(text: string): string_
+
+Convert a basic text string to a valid linkified text
+
+**Params**
+
+*  **`text`** : _`String`_ Text to linkify --> to convert with links
+
+**Returns** _`String`_  converted text with links
+
+
 ```typescript
 import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
 
@@ -154,6 +167,23 @@ constructor(public linkifyService: NgxLinkifyjsService) {
 ```
 
 #### `find` method
+
+Finds all links in the given string
+
+**Params**
+
+*  **`text`** : _`String`_ search text string
+
+**Returns** _`Array<Link>`_ List of links where each element is a hash with properties type, value, and href:
+
+
+* **type** is the type of entity found. Possible values are
+  - `'url'`
+  - `'email'`
+  - `'hashtag'` (if Hashtag is enabled via config/default `true`)
+  - `'mention'` (if Mention is enabled via config/default `true`)
+* **value** is the original entity substring.
+* **href** should be the value of this link's `href` attribute.
 
 ```typescript
 import {Component, OnInit} from '@angular/core';
@@ -191,6 +221,14 @@ export class HomeComponent {
 ```
 
 #### `test` method
+
+Is the given string a link? Not to be used for strict validation - See [Caveats](caveats.html)
+
+**Params**
+
+* **`value`** : _`String`_ |  _`Array<String>`_  Test string
+
+**Returns** _`Boolean`_
 
 ```typescript
 import {Component, OnInit} from '@angular/core';

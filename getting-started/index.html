@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Getting Started | ngx-linkifyjs</title>
+  <base href="/ngx-linkifyjs/">  <meta name="description" content="Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML <a> tags via linkifyjs">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@anthonynahas">
+  <meta name="twitter:title" content="ngx-linkifyjs">
+  <!-- Page description less than 200 characters -->
+  <meta name="twitter:description" content="Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML <a> tags via linkifyjs">
+  <meta name="twitter:creator" content="@anthonynahas">
+  <!-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="https://anthonynahas.github.io/ngx-linkifyjs/assets/logo.svg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="ngx-linkifyjs">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://anthonynahas.github.io/ngx-linkifyjs">
+  <meta property="og:image" content="https://anthonynahas.github.io/ngx-linkifyjs/assets/logo.svg">
+  <meta property="og:description" content="Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML <a> tags via linkifyjs">
+  <meta property="og:site_name" content="ngx-linkifyjs">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-114342493-10"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114342493-10');
+  </script>
+
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+<link rel="stylesheet" href="/ngx-linkifyjs/styles.8ca867ca959787227bfa.css"><style ng-transition="ngx-linkifyjs-demo-id">
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */</style><style ng-transition="ngx-linkifyjs-demo-id">.navbar[_ngcontent-sc1] {
+  background: rgba(255, 255, 255, 0.95); }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9BL2dpdC9uZ3gtbGlua2lmeWpzL2RlbW8vc3JjL2FwcC9zaGFyZWQvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHNDQUErQixFQUNsQyIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm5hdmJhciB7XG4gICAgYmFja2dyb3VuZDogaHNsYSgwLDAlLDEwMCUsLjk1KVxufVxuIl19 */</style><style ng-transition="ngx-linkifyjs-demo-id">footer[_ngcontent-sc2] {
+  padding: 3rem 0;
+  font-size: 85%;
+  background-color: #f7f7f7;
+  text-align: left; }
+  footer[_ngcontent-sc2]   .heart[_ngcontent-sc2] {
+    color: #ff005d; }
+  footer[_ngcontent-sc2]   p[_ngcontent-sc2] {
+    margin-bottom: 0; }
+  footer[_ngcontent-sc2]   a[_ngcontent-sc2] {
+    font-weight: 500;
+    color: #55595c; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9BL2dpdC9uZ3gtbGlua2lmeWpzL2RlbW8vc3JjL2FwcC9zaGFyZWQvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFlO0VBQ2YsZUFBYztFQUNkLDBCQUF5QjtFQUN6QixpQkFBZ0IsRUFlakI7RUFuQkQ7SUFPSSxlQUFjLEVBQ2I7RUFSTDtJQVdJLGlCQUFnQixFQUNqQjtFQVpIO0lBZUksaUJBQWdCO0lBQ2hCLGVBQWMsRUFDZiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZm9vdGVyIHtcbiAgcGFkZGluZzogM3JlbSAwO1xuICBmb250LXNpemU6IDg1JTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y3ZjdmNztcbiAgdGV4dC1hbGlnbjogbGVmdDtcblxuICAuaGVhcnR7XG4gICAgY29sb3I6ICNmZjAwNWQ7XG4gICAgfVxuXG4gIHAge1xuICAgIG1hcmdpbi1ib3R0b206IDA7XG4gIH1cblxuICBhIHtcbiAgICBmb250LXdlaWdodDogNTAwO1xuICAgIGNvbG9yOiAjNTU1OTVjO1xuICB9XG5cbn0gICAiXX0= */</style><style ng-transition="ngx-linkifyjs-demo-id">.getting-started[_ngcontent-sc4] {
+  margin-top: 1.0rem; }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9BL2dpdC9uZ3gtbGlua2lmeWpzL2RlbW8vc3JjL2FwcC9nZXR0aW5nLXN0YXJ0ZWQvZ2V0dGluZy1zdGFydGVkLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQWtCLEVBQ3JCIiwiZmlsZSI6InNyYy9hcHAvZ2V0dGluZy1zdGFydGVkL2dldHRpbmctc3RhcnRlZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5nZXR0aW5nLXN0YXJ0ZWR7XG4gICAgbWFyZ2luLXRvcDogMS4wcmVtO1xufVxuIl19 */</style></head>
+
+<body>
+  <app-root _nghost-sc0="" ng-version="7.1.0"><app-header _ngcontent-sc0="" _nghost-sc1=""><div _ngcontent-sc1="" class="container" style="padding-left: 0; padding-right: 0;"><header _ngcontent-sc1="" class="navbar navbar-light navbar-fixed-top navbar-expand-lg"><a _ngcontent-sc1="" class="navbar-brand" routerlink="/home" href="/ngx-linkifyjs/home">ngx-linkifyjs</a><button _ngcontent-sc1="" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" type="button"><span _ngcontent-sc1="" class="navbar-toggler-icon"></span></button><div _ngcontent-sc1="" class="navbar-collapse collapse" id="navbarContent"><ul _ngcontent-sc1="" class="navbar-nav mr-auto"><li _ngcontent-sc1="" class="nav-item active" routerlinkactive="active"><a _ngcontent-sc1="" class="nav-link" routerlink="/getting-started" href="/ngx-linkifyjs/getting-started">Getting Started</a></li></ul></div></header></div></app-header><div _ngcontent-sc0=""><router-outlet _ngcontent-sc0=""></router-outlet><app-getting-started _nghost-sc4=""><div _ngcontent-sc4="" class="jumbotron jumbotron-fluid"><div _ngcontent-sc4="" class="container"><h1 _ngcontent-sc4="">Getting Started</h1></div></div><section _ngcontent-sc4="" class="getting-started"><div _ngcontent-sc4="" class="container"><markdown _ngcontent-sc4="" src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/README.md"><p align="center">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/demo/src/assets/logo.svg">
+</p>
+
+<h1 id="ngx-linkifyjs-angular-v7-wrapper-for-linkifyjs-library-for-finding-links-in-plain-text-and-converting-them-to-html-a-tags-via-linkifyjs">ngx-linkifyjs - Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &lt;a&gt; tags via linkifyjs</h1>
+<p><a href="https://badge.fury.io/js/ngx-linkifyjs"><img src="https://badge.fury.io/js/ngx-linkifyjs.svg" alt="npm version"></a>,
+<a href="https://anthonynahas.github.io/ngx-linkifyjs"><img src="https://img.shields.io/badge/demo-online-ed1c46.svg" alt="npm"></a>
+<a href="https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg" alt="Join the chat at (https://gitter.im/angular-material-extensions/Lobby"></a>
+<a href="https://circleci.com/gh/AnthonyNahas/ngx-linkifyjs"><img src="https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-linkifyjs/master.svg?label=circleci" alt="CircleCI branch"></a>
+<a href="https://travis-ci.org/AnthonyNahas/ngx-linkifyjs"><img src="https://travis-ci.org/AnthonyNahas/ngx-linkifyjs.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/AnthonyNahas/ngx-linkifyjs?branch=master"><img src="https://coveralls.io/repos/github/AnthonyNahas/ngx-linkifyjs/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://david-dm.org/anthonynahas/ngx-linkifyjs"><img src="https://david-dm.org/anthonynahas/ngx-linkifyjs/status.svg" alt="dependency Status"></a>
+<a href="https://david-dm.org/anthonynahas/ngx-linkifyjs#info=devDependencies"><img src="https://david-dm.org/anthonynahas/ngx-linkifyjs/dev-status.svg?branch=master" alt="devDependency Status"></a>
+<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/anthonynahas/ngx-linkifyjs.svg" alt="Greenkeeper Badge"></a>
+<a href="https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE"><img src="https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square" alt="license"></a></p>
+<p align="center">
+  <img alt="ngx-linkifyjs demo" width="320px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/assets/demo.gif">
+</p>
+
+<h2 id="built-by-and-for-developers-heart-">Built by and for developers :heart:</h2>
+<p>Do you have any question or suggestion ? Please do not hesitate to contact us!
+Alternatively, provide a PR | open an appropriate issue <a href="https://github.com/anthonynahas/ngx-linkifyjs/issues">here</a></p>
+<p>If you like this project, support <a href="https://github.com/anthonynahas/ngx-linkifyjs">ngx-linkifyjs</a> 
+by starring :star: and sharing it :loudspeaker:</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#config">Config</a></li>
+<li><a href="#run-demo-app-locally">Run Demo App Locally</a></li>
+<li><a href="#other-angular-libraries">Other Angular Libraries</a></li>
+<li><a href="#support">Support</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<a name="demo">
+
+<h2 id="demo">Demo</h2>
+</a><p><a name="demo">View all the directives in action at </a><a href="https://anthonynahas.github.io/ngx-linkifyjs">https://anthonynahas.github.io/ngx-linkifyjs</a></p>
+<a name="documentation">
+
+</a><h2 id="documentation"><a name="documentation"></a><a href="https://anthonynahas.github.io/ngx-linkifyjs/doc/index.html">Documentation</a></h2>
+<a name="dependencies">
+
+<h2 id="dependencies">Dependencies</h2>
+</a><ul><a name="dependencies">
+</a><li><a name="dependencies"></a><a href="https://angular.io">Angular</a> (<em>requires</em> Angular 2 or higher, tested with 7.x)</li>
+</ul>
+<a name="installation">
+
+<h2 id="installation">Installation</h2>
+<p>Install above dependencies via <em>npm</em>. </p>
+<p>Now install <code>ngx-linkifyjs</code> via:</p>
+<pre><code class="language-shell">npm install --save ngx-linkifyjs</code></pre>
+<hr>
+<h5 id="systemjs">SystemJS</h5>
+<blockquote>
+<p><strong>Note</strong>:If you are using <code>SystemJS</code>, you should adjust your configuration to point to the UMD bundle.
+In your systemjs config file, <code>map</code> needs to tell the System loader where to look for <code>ngx-linkifyjs</code>:
+```js
+map: {
+  'ngx-linkifyjs': 'node_modules/ngx-linkifyjs/bundles/ngx-linkifyjs.umd.js',
+}</p>
+</blockquote>
+<pre><code>---
+
+Once installed you need to import the main module:
+```js
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';</code></pre><p>The only remaining part is to list the imported module in your application module. The exact method will be slightly
+different for the root (top-level) module for which you should end up with the code similar to (notice <code>NgxLinkifyjsModule .forRoot()</code>):</p>
+<pre><code class="language-typescript">import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+
+@NgModule({
+  declarations: [AppComponent, ...],
+  imports: [NgxLinkifyjsModule.forRoot(), ...],  
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}</code></pre>
+<p>Other modules in your application can simply import <code>NgxLinkifyjsModule</code>:</p>
+<pre><code class="language-js">import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+
+@NgModule({
+  declarations: [OtherComponent, ...],
+  imports: [NgxLinkifyjsModule, ...], 
+})
+export class OtherModule {
+}</code></pre>
+</a><a name="usage">
+
+<h2 id="usage">Usage</h2>
+<p>Once the library is imported, you can use its components, directives and pipes in your Angular application:</p>
+<h3 id="pipe">Pipe</h3>
+<p><code>{{text | linkify}}</code></p>
+<pre><code class="language-html">&lt;span [innerHTML]="'Linkify the following URL: https://github.com/anthonynahas/ngx-linkifyjs and share it &lt;3' | linkify"&gt;&lt;/span&gt;</code></pre>
+</a><p><a name="usage"><strong>result</strong>: Linkify the following URL: </a><a href="https://github.com/anthonynahas/ngx-linkifyjs">https://github.com/anthonynahas/ngx-linkifyjs</a> and share it &lt;3</p>
+<h3 id="service">Service</h3>
+<p>Inject the <code>NgxLinkifyjsService</code> service</p>
+<pre><code class="language-typescript">import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
+
+constructor(public linkifyService: NgxLinkifyjsService) {
+ } 
+}</code></pre>
+<h4 id="linkify-method"><code>linkify</code> method</h4>
+<pre><code class="language-typescript">import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
+
+constructor(public linkifyService: NgxLinkifyjsService) {
+  this.linkifyService.linkify('For help with GitHub.com, please email support@github.com');
+  // result --&gt; see below
+ } 
+}</code></pre>
+<pre><code class="language-typescript">'For help with &lt;a href=\"http://github.com\" class=\"linkified\" target=\"_blank\"&gt;GitHub.com&lt;/a&gt;, please email &lt;a href=\"mailto:support@github.com\" class=\"linkified\"&gt;support@github.com&lt;/a&gt;'</code></pre>
+<h4 id="find-method"><code>find</code> method</h4>
+<pre><code class="language-typescript">import {Component, OnInit} from '@angular/core';
+import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
+})
+export class HomeComponent {
+
+  constructor(public linkifyService: NgxLinkifyjsService) {
+    const foundLinks: Link[] = this.linkifyService.find('Any links to github.com here? If not, contact test@example.com');
+
+    // result - output --&gt; see below 
+  }
+
+}</code></pre>
+<pre><code class="language-typescript">[
+  {
+    type: LinkType.URL,
+    value: 'github.com',
+    href: 'http://github.com'
+  },
+  {
+    type: LinkType.EMAIL,
+    value: 'test@example.com',
+    href: 'mailto:test@example.com'
+  }
+]</code></pre>
+<h4 id="test-method"><code>test</code> method</h4>
+<pre><code class="language-typescript">import {Component, OnInit} from '@angular/core';
+import {NgxLinkifyjsService} from 'ngx-linkifyjs';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
+})
+export class HomeComponent {
+
+  constructor(public linkifyService: NgxLinkifyjsService) {
+    this.linkifyService.test('github.com'); // return true
+    this.linkifyService.test('dev@example.com'); // return true
+    this.linkifyService.test(['github.com', 'email']); // return false
+    this.linkifyService.test('helloWorld'); // return false
+  }
+}</code></pre>
+<a name="config">
+
+<h4 id="enable-disable-the-hash-and-mention">Enable/Disable the hash and mention</h4>
+<p>The config argument is 100% optional, otherwise we will take the default values <code>true</code></p>
+<pre><code class="language-typescript">import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
+
+@NgModule({
+  declarations: [AppComponent, ...],
+  imports: [NgxLinkifyjsModule.forRoot(
+                  {
+                    enableHash: false, // optional - default true
+                    enableMention: false // optional - default true
+                  }), ...],  
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}</code></pre>
+</a><p><a name="config">take a look @ </a><a href="https://github.com/angular-material-extensions/link-preview">@angular-material-extensions/link-preview</a> which is using <code>ngx-linkifyjs</code></p>
+<h2 id="run-demo-app-locally">Run Demo App Locally</h2>
+<ul>
+<li><p><a href="https://github.com/AnthonyNahas/ngx-linkifyjs.git">clone this repo</a> by running</p>
+<pre><code class="language-bash">$ git clone https://github.com/AnthonyNahas/ngx-linkifyjs.git</code></pre>
+</li>
+<li><p>link the ngx-linkifyjs package</p>
+</li>
+</ul>
+<pre><code class="language-bash">$ gulp link</code></pre>
+<ul>
+<li><p>navigate to the demo app directory</p>
+<pre><code class="language-bash">$ cd demo</code></pre>
+</li>
+<li><p>install the dependencies</p>
+<pre><code class="language-bash">$ npm i</code></pre>
+</li>
+<li><p>run/start/serve the app</p>
+<pre><code class="language-bash">$ npm run start</code></pre>
+<p>or</p>
+<pre><code class="language-bash">$ ng serve --open</code></pre>
+</li>
+<li><p>the app is now hosted by <code>http://localhost:4200/</code></p>
+</li>
+</ul>
+<hr>
+<a name="other-angular-libraries">
+
+<h2 id="other-angular-libraries">Other Angular Libraries</h2>
+</a><ul><a name="other-angular-libraries">
+</a><li><a name="other-angular-libraries"></a><a href="https://github.com/anthonynahas/ngx-auth-firebaseui">ngx-auth-firebaseui</a></li>
+<li><a href="https://github.com/firebaseui/ng-bootstrap">@firebaseui/ng-bootstrap</a></li>
+<li><a href="https://github.com/angular-material-extensions/password-strength">@angular-material-extensions/password-strength</a></li>
+<li><a href="https://github.com/angular-material-extensions/link-preview">@angular-material-extensions/link-preview</a></li>
+<li><a href="https://github.com/angular-material-extensions/pages">@angular-material-extensions/pages</a></li>
+<li><a href="https://github.com/angular-material-extensions/contacts">@angular-material-extensions/contacts</a></li>
+<li><a href="https://github.com/angular-material-extensions/faq">@angular-material-extensions/faq</a></li>
+<li><a href="https://github.com/angular-material-extensions/jumbotron">@angular-material-extensions/jumbotron</a></li>
+<li><a href="https://github.com/angular-material-extensions/google-maps-autocomplete">@angular-material-extensions/google-maps-autocomplete</a></li>
+<li><a href="https://github.com/angular-material-extensions/combination-generator">@angular-material-extensions/combination-generator</a></li>
+</ul>
+<hr>
+<a name="support">
+
+<h2 id="support">Support</h2>
+</a><ul><a name="support">
+</a><li><a name="support"></a><p><a name="support">Drop an email to: </a><a href="mailto:anthony.na@hotmail.de">Anthony Nahas</a></p>
+</li>
+<li><p>or open an appropriate <a href="https://github.com/anthonynahas/ngx-linkifyjs/issues">issue</a></p>
+</li>
+<li><p>let us chat on <a href="https://gitter.im/angular-material-extensions/Lobby">Gitter</a></p>
+<p>Built by and for developers :heart: we will help you :punch:</p>
+</li>
+</ul>
+<hr>
+<hr>
+<p><img src="assets/jetbrains-variant-4_logos/jetbrains-variant-4.png" alt="jetbrains logo"></p>
+<p>This project is supported by <a href="https://www.jetbrains.com/">jetbrains</a> with 1 ALL PRODUCTS PACK OS LICENSE incl. <a href="https://www.jetbrains.com/webstorm">webstorm</a></p>
+<hr>
+<a name="license">
+
+<h2 id="license">License</h2>
+<p>Copyright (c) 2018 Anthony Nahas. Licensed under the MIT License (MIT)</p>
+</a></markdown></div></section></app-getting-started></div><app-footer _ngcontent-sc0="" _nghost-sc2=""><footer _ngcontent-sc2="" class="bd-footer text-muted"><div _ngcontent-sc2="" class="container"><p _ngcontent-sc2=""> Coded with <i _ngcontent-sc2="" class="fa fa-heart heart"></i> by <a _ngcontent-sc2="" href="https://github.com/anthonynahas" target="_blank">Anthony Nahas</a>.</p><p _ngcontent-sc2=""> Code licensed under <a _ngcontent-sc2="" href="https://raw.githubusercontent.com/anthonynahas/ngx-linkifyjs/master/LICENSE" target="_blank">MIT license conditions.</a></p></div></footer></app-footer></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<script type="text/javascript" src="/ngx-linkifyjs/runtime.e493f4002d619f3190c2.js"></script><script type="text/javascript" src="/ngx-linkifyjs/polyfills.d1c7bf4a2ae7c3435f95.js"></script><script type="text/javascript" src="/ngx-linkifyjs/scripts.f565fd8d074b547c4d9c.js"></script><script type="text/javascript" src="/ngx-linkifyjs/main.64cc6be8f6a94e7dfcdf.js"></script>
+
+
+<script id="ngx-linkifyjs-demo-id-state" type="application/json">{&q;G.https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/README.md?&q;:{&q;body&q;:&q;&l;p align=\&q;center\&q;&g;\n  &l;img height=\&q;256px\&q; width=\&q;256px\&q; style=\&q;text-align: center;\&q; src=\&q;https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/demo/src/assets/logo.svg\&q;&g;\n&l;/p&g;\n\n# ngx-linkifyjs - Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &a;lt;a&a;gt; tags via linkifyjs\n\n[![npm version](https://badge.fury.io/js/ngx-linkifyjs.svg)](https://badge.fury.io/js/ngx-linkifyjs),\n[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://anthonynahas.github.io/ngx-linkifyjs)\n[![Join the chat at (https://gitter.im/angular-material-extensions/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/angular-material-extensions/Lobby?utm_source=badge&a;utm_medium=badge&a;utm_campaign=pr-badge&a;utm_content=badge)\n[![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-linkifyjs/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-linkifyjs)\n[![Build Status](https://travis-ci.org/AnthonyNahas/ngx-linkifyjs.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-linkifyjs)\n[![Coverage Status](https://coveralls.io/repos/github/AnthonyNahas/ngx-linkifyjs/badge.svg?branch=master)](https://coveralls.io/github/AnthonyNahas/ngx-linkifyjs?branch=master)\n[![dependency Status](https://david-dm.org/anthonynahas/ngx-linkifyjs/status.svg)](https://david-dm.org/anthonynahas/ngx-linkifyjs)\n[![devDependency Status](https://david-dm.org/anthonynahas/ngx-linkifyjs/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-linkifyjs#info=devDependencies)\n[![Greenkeeper Badge](https://badges.greenkeeper.io/anthonynahas/ngx-linkifyjs.svg)](https://greenkeeper.io/)\n[![license](https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE)\n\n&l;p align=\&q;center\&q;&g;\n  &l;img alt=\&q;ngx-linkifyjs demo\&q; width=\&q;320px\&q; style=\&q;text-align: center;\&q; \n  src=\&q;https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/assets/demo.gif\&q;&g;\n&l;/p&g;\n\n## Built by and for developers :heart:\nDo you have any question or suggestion ? Please do not hesitate to contact us!\nAlternatively, provide a PR | open an appropriate issue [here](https://github.com/anthonynahas/ngx-linkifyjs/issues)\n\nIf you like this project, support [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs) \nby starring :star: and sharing it :loudspeaker:\n\n\n\n## Table of Contents\n- [Demo](#demo)\n- [Features](#features)\n- [Documentation](#documentation)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Config](#config)\n- [Run Demo App Locally](#run-demo-app-locally)\n- [Other Angular Libraries](#other-angular-libraries)\n- [Support](#support)\n- [License](#license)\n\n&l;a name=\&q;demo\&q;/&g;\n\n## Demo\n\nView all the directives in action at https://anthonynahas.github.io/ngx-linkifyjs\n\n&l;a name=\&q;documentation\&q;/&g;\n\n## [Documentation](https://anthonynahas.github.io/ngx-linkifyjs/doc/index.html)\n\n&l;a name=\&q;dependencies\&q;/&g;\n\n## Dependencies\n* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 7.x)\n\n&l;a name=\&q;installation\&q;/&g;\n\n## Installation\nInstall above dependencies via *npm*. \n\nNow install `ngx-linkifyjs` via:\n```shell\nnpm install --save ngx-linkifyjs\n```\n\n---\n##### SystemJS\n&g;**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.\nIn your systemjs config file, `map` needs to tell the System loader where to look for `ngx-linkifyjs`:\n```js\nmap: {\n  &s;ngx-linkifyjs&s;: &s;node_modules/ngx-linkifyjs/bundles/ngx-linkifyjs.umd.js&s;,\n}\n```\n---\n\nOnce installed you need to import the main module:\n```js\nimport { NgxLinkifyjsModule } from &s;ngx-linkifyjs&s;;\n```\nThe only remaining part is to list the imported module in your application module. The exact method will be slightly\ndifferent for the root (top-level) module for which you should end up with the code similar to (notice ` NgxLinkifyjsModule .forRoot()`):\n```typescript\nimport { NgxLinkifyjsModule } from &s;ngx-linkifyjs&s;;\n\n@NgModule({\n  declarations: [AppComponent, ...],\n  imports: [NgxLinkifyjsModule.forRoot(), ...],  \n  bootstrap: [AppComponent]\n})\nexport class AppModule {\n}\n```\n\nOther modules in your application can simply import ` NgxLinkifyjsModule `:\n\n```js\nimport { NgxLinkifyjsModule } from &s;ngx-linkifyjs&s;;\n\n@NgModule({\n  declarations: [OtherComponent, ...],\n  imports: [NgxLinkifyjsModule, ...], \n})\nexport class OtherModule {\n}\n```\n\n&l;a name=\&q;usage\&q;/&g;\n\n## Usage\n\nOnce the library is imported, you can use its components, directives and pipes in your Angular application:\n\n### Pipe\n\n`{{text | linkify}}`\n\n```html\n&l;span [innerHTML]=\&q;&s;Linkify the following URL: https://github.com/anthonynahas/ngx-linkifyjs and share it &l;3&s; | linkify\&q;&g;&l;/span&g;\n```\n\n**result**: Linkify the following URL: [https://github.com/anthonynahas/ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs) and share it &l;3\n\n### Service\n\nInject the `NgxLinkifyjsService` service\n\n```typescript\nimport {NgxLinkifyjsService, Link, LinkType} from &s;ngx-linkifyjs&s;;\n\nconstructor(public linkifyService: NgxLinkifyjsService) {\n } \n}\n```\n\n#### `linkify` method\n```typescript\nimport {NgxLinkifyjsService, Link, LinkType} from &s;ngx-linkifyjs&s;;\n\nconstructor(public linkifyService: NgxLinkifyjsService) {\n  this.linkifyService.linkify(&s;For help with GitHub.com, please email support@github.com&s;);\n  // result --&g; see below\n } \n}\n```\n\n```typescript\n&s;For help with &l;a href=\\\&q;http://github.com\\\&q; class=\\\&q;linkified\\\&q; target=\\\&q;_blank\\\&q;&g;GitHub.com&l;/a&g;, please email &l;a href=\\\&q;mailto:support@github.com\\\&q; class=\\\&q;linkified\\\&q;&g;support@github.com&l;/a&g;&s;\n```\n\n#### `find` method\n\n```typescript\nimport {Component, OnInit} from &s;@angular/core&s;;\nimport {NgxLinkifyjsService, Link, LinkType} from &s;ngx-linkifyjs&s;;\n\n@Component({\n  selector: &s;app-home&s;,\n  templateUrl: &s;./home.component.html&s;,\n  styleUrls: [&s;./home.component.scss&s;]\n})\nexport class HomeComponent {\n    \n  constructor(public linkifyService: NgxLinkifyjsService) {\n    const foundLinks: Link[] = this.linkifyService.find(&s;Any links to github.com here? If not, contact test@example.com&s;);\n    \n    // result - output --&g; see below \n  }\n  \n}\n```\n\n```typescript\n[\n  {\n    type: LinkType.URL,\n    value: &s;github.com&s;,\n    href: &s;http://github.com&s;\n  },\n  {\n    type: LinkType.EMAIL,\n    value: &s;test@example.com&s;,\n    href: &s;mailto:test@example.com&s;\n  }\n]\n```\n\n#### `test` method\n\n```typescript\nimport {Component, OnInit} from &s;@angular/core&s;;\nimport {NgxLinkifyjsService} from &s;ngx-linkifyjs&s;;\n\n@Component({\n  selector: &s;app-home&s;,\n  templateUrl: &s;./home.component.html&s;,\n  styleUrls: [&s;./home.component.scss&s;]\n})\nexport class HomeComponent {\n    \n  constructor(public linkifyService: NgxLinkifyjsService) {\n    this.linkifyService.test(&s;github.com&s;); // return true\n    this.linkifyService.test(&s;dev@example.com&s;); // return true\n    this.linkifyService.test([&s;github.com&s;, &s;email&s;]); // return false\n    this.linkifyService.test(&s;helloWorld&s;); // return false\n  }\n}\n```\n\n&l;a name=\&q;config\&q;/&g;\n\n#### Enable/Disable the hash and mention\n\nThe config argument is 100% optional, otherwise we will take the default values `true`\n\n```typescript\nimport { NgxLinkifyjsModule } from &s;ngx-linkifyjs&s;;\n\n@NgModule({\n  declarations: [AppComponent, ...],\n  imports: [NgxLinkifyjsModule.forRoot(\n                  {\n                    enableHash: false, // optional - default true\n                    enableMention: false // optional - default true\n                  }), ...],  \n  bootstrap: [AppComponent]\n})\nexport class AppModule {\n}\n```\n\ntake a look @ [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview) which is using `ngx-linkifyjs`\n\n## Run Demo App Locally\n\n- [clone this repo](https://github.com/AnthonyNahas/ngx-linkifyjs.git) by running\n```bash\n$ git clone https://github.com/AnthonyNahas/ngx-linkifyjs.git\n```\n\n- link the ngx-linkifyjs package\n\n```bash\n$ gulp link\n```\n\n- navigate to the demo app directory\n```bash\n$ cd demo\n```\n\n- install the dependencies\n```bash\n$ npm i\n```\n\n- run/start/serve the app\n```bash\n$ npm run start\n```\nor\n```bash\n$ ng serve --open\n```\n- the app is now hosted by `http://localhost:4200/`\n\n---\n\n\n&l;a name=\&q;other-angular-libraries\&q;/&g;\n\n## Other Angular Libraries\n- [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui)\n- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)\n- [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)\n- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)\n- [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)\n- [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)\n- [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)\n- [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)\n- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)\n- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)\n\n---\n\n&l;a name=\&q;support\&q;/&g;\n\n## Support\n+ Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)\n+ or open an appropriate [issue](https://github.com/anthonynahas/ngx-linkifyjs/issues)\n+ let us chat on [Gitter](https://gitter.im/angular-material-extensions/Lobby)\n \n Built by and for developers :heart: we will help you :punch:\n\n---\n\n---\n\n![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)\n\nThis project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)\n\n---\n\n&l;a name=\&q;license\&q;/&g;\n\n## License\n\nCopyright (c) 2018 Anthony Nahas. Licensed under the MIT License (MIT)\n\n&q;,&q;headers&q;:{&q;date&q;:[&q;Mon, 26 Nov 2018 21:32:43 GMT&q;],&q;content-type&q;:[&q;text/markdown;charset=utf-8&q;],&q;transfer-encoding&q;:[&q;chunked&q;],&q;connection&q;:[&q;keep-alive&q;],&q;x-content-type-options&q;:[&q;nosniff&q;],&q;x-robots-tag&q;:[&q;none&q;],&q;access-control-allow-origin&q;:[&q;*&q;],&q;link&q;:[&q;&l;https://rawgit.com/&g;; rel=\&q;sunset\&q;; title=\&q;RawGit will soon shut down. Please stop using it.\&q;&q;],&q;sunset&q;:[&q;Tue, 01 Oct 2019 00:00:00 GMT&q;],&q;etag&q;:[&q;W/\&q;6af95716657ee3f5ca8c5ca8ced5d5fd2f0a4d4d\&q;&q;],&q;cache-control&q;:[&q;max-age=86400&q;],&q;vary&q;:[&q;Accept-Encoding&q;],&q;rawgit-cache-status&q;:[&q;HIT&q;],&q;cf-cache-status&q;:[&q;MISS&q;],&q;strict-transport-security&q;:[&q;max-age=31536000; preload, max-age=31536000; preload&q;],&q;expect-ct&q;:[&q;max-age=604800, report-uri=\&q;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\&q;&q;],&q;cf-ray&q;:[&q;47ff781c9fb09ac4-FRA&q;],&q;server&q;:[&q;NetDNA-cache/2.2&q;],&q;x-cache&q;:[&q;MISS&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/README.md&q;}}</script></body></html>

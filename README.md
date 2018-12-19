@@ -206,6 +206,7 @@ export class HomeComponent {
 ```
 
 ```typescript
+// Result
 [
   {
     type: LinkType.URL,

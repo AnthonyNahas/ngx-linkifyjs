@@ -282,10 +282,10 @@ take a look @ [@angular-material-extensions/link-preview](https://github.com/ang
 $ git clone https://github.com/AnthonyNahas/ngx-linkifyjs.git
 ```
 
-- link the ngx-linkifyjs package
+- setup the ngx-linkifyjs package
 
 ```bash
-$ gulp link
+$ gulp steup
 ```
 
 - navigate to the demo app directory
@@ -293,19 +293,11 @@ $ gulp link
 $ cd demo
 ```
 
-- install the dependencies
+- install the dependencies and run the app locally
 ```bash
-$ npm i
+$ npm i && npm start
 ```
 
-- run/start/serve the app
-```bash
-$ npm run start
-```
-or
-```bash
-$ ng serve --open
-```
 - the app is now hosted by `http://localhost:4200/`
 
 ---

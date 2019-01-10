@@ -180,6 +180,20 @@ export interface NgxLinkifyjsConfig {
   enableHash?: boolean,
   enableMention?: boolean
 }
+
+export interface NgxLinkifyOptions {
+  attributes?: any,
+  className?: string,
+  defaultProtocol?: string,
+  events?: any,
+  ignoreTags?: Array&lt;any&gt;,
+  nl2br?: boolean,
+  tagName?: string,
+  target?: { url: string },
+  validate?: boolean,
+  format?(value: any, type: any): any,
+  formatHref?(href: any, type: any): any,
+}
 </code></pre>
     </div>
 </div>

@@ -106,7 +106,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -141,13 +141,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:28</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Find any links in a given text as a string</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -157,6 +159,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -171,6 +174,12 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><ul>
+<li>the string to find some links</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -203,20 +212,22 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>linkify(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>linkify(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, options?: <a href="../interfaces/NgxLinkifyOptions.html">NgxLinkifyOptions</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:18</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Convert the passed text as a string to an appropriate url</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -226,6 +237,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -240,6 +252,30 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><ul>
+<li>the string to convert</li>
+</ul>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/NgxLinkifyOptions.html" target="_self" >NgxLinkifyOptions</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            Yes
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><ul>
+<li>options to pass it to the linkifyjs library</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -279,13 +315,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/module/service/ngx-linkifyjs.service.ts:37</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Test if a given value or array of values are links</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -295,6 +333,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -309,6 +348,12 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><ul>
+<li>the value to test</li>
+</ul>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -337,21 +382,38 @@
 // @ts-ignore
 import * as linkify from &#x27;linkifyjs&#x27;;
 import {Link} from &#x27;../..&#x27;;
+import {NgxLinkifyOptions} from &#x27;../interfaces/ngx-linkifyjs.interface&#x27;;
 
 @Injectable()
 export class NgxLinkifyjsService {
   constructor() {
   }
 
-  linkify(text: string): string {
+  /**
+   * Convert the passed text as a string to an appropriate url
+   *
+   * @param text - the string to convert
+   * @param options - options to pass it to the linkifyjs library
+   */
+  linkify(text: string, options?: NgxLinkifyOptions): string {
     // @ts-ignore
-    return text.linkify();
+    return text.linkify(options);
   }
 
+  /**
+   * Find any links in a given text as a string
+   *
+   * @param text - the string to find some links
+   */
   find(text: string): Array&lt;Link&gt; {
     return linkify.find(text);
   }
 
+  /**
+   * Test if a given value or array of values are links
+   *
+   * @param value - the value to test
+   */
   test(value: string | string[]): boolean {
     if (typeof value &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
       return linkify.test(value);

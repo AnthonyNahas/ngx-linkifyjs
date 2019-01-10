@@ -31,7 +31,7 @@
                    <div class="content-data">
 
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-linkifyjs@master/demo/src/assets/logo.svg">
 </p>
 
 <h1 id="ngx-linkifyjs-angular-v7-wrapper-for-linkifyjs-library-for-finding-links-in-plain-text-and-converting-them-to-html-a-tags-via-linkifyjs">ngx-linkifyjs - Angular V7 wrapper for linkifyjs -  library for finding links in plain text and converting them to HTML &lt;a&gt; tags via linkifyjs</h1>
@@ -44,10 +44,11 @@
 <a href="https://david-dm.org/anthonynahas/ngx-linkifyjs"><img src="https://david-dm.org/anthonynahas/ngx-linkifyjs/status.svg" alt="dependency Status" class="img-responsive"></a>
 <a href="https://david-dm.org/anthonynahas/ngx-linkifyjs#info=devDependencies"><img src="https://david-dm.org/anthonynahas/ngx-linkifyjs/dev-status.svg?branch=master" alt="devDependency Status" class="img-responsive"></a>
 <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/anthonynahas/ngx-linkifyjs.svg" alt="Greenkeeper Badge" class="img-responsive"></a>
-<a href="https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE"><img src="https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square" alt="license" class="img-responsive"></a></p>
+<a href="https://github.com/AnthonyNahas/ngx-linkifyjs/blob/master/LICENSE"><img src="https://img.shields.io/github/license/anthonynahas/ngx-linkifyjs.svg?style=flat-square" alt="license" class="img-responsive"></a>
+<a href="https://github.com/gdi2290/awesome-angular"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome" class="img-responsive"></a></p>
 <p align="center">
   <img alt="ngx-linkifyjs demo" width="320px" style="text-align: center;" 
-  src="https://cdn.rawgit.com/anthonynahas/ngx-linkifyjs/master/assets/demo.gif">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-linkifyjs@master/assets/demo.gif">
 </p>
 
 <h2 id="built-by-and-for-developers-heart-">Built by and for developers :heart:</h2>
@@ -86,7 +87,7 @@ by starring :star: and sharing it :loudspeaker:</p>
 <h2 id="installation">Installation</h2>
 <p>Install above dependencies via <em>npm</em>. </p>
 <p>Now install <code>ngx-linkifyjs</code> via:</p>
-<div><pre class="line-numbers"><code class="language-shell">npm install --save ngx-linkifyjs</code></pre></div><hr>
+<div><pre class="line-numbers"><code class="language-shell">npm i -s ngx-linkifyjs</code></pre></div><hr>
 <h5 id="systemjs">SystemJS</h5>
 <blockquote>
 <p><strong>Note</strong>:If you are using <code>SystemJS</code>, you should adjust your configuration to point to the UMD bundle.
@@ -122,23 +123,97 @@ export class OtherModule {
 
 <h2 id="usage">Usage</h2>
 <p>Once the library is imported, you can use its components, directives and pipes in your Angular application:</p>
-<h3 id="pipe">Pipe</h3>
+<h3 id="options">Options</h3>
+<p><code>ngx-linkifyjs</code> provides an appropriate option interface called <code>NgxLinkifyOptions</code> to access <a href="https://soapbox.github.io/linkifyjs/docs/options.html">the native options of the linkifyjs library</a>
+and all of them are optional</p>
+<ul>
+<li>Default values</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-typescript">
+import { NgxLinkifyOptions } from &#39;ngx-linkifyjs&#39;;
+
+  const options: NgxLinkifyOptions =
+   {
+    attributes: null,
+    className: &#39;linkified&#39;,
+    defaultProtocol: &#39;http&#39;,
+    events: null,
+    format: function (value, type) {
+      return value;
+    },
+    formatHref: function (href, type) {
+      return href;
+    },
+    ignoreTags: [],
+    nl2br: false,
+    tagName: &#39;a&#39;,
+    target: {
+      url: &#39;_blank&#39;
+    },
+    validate: true
+  };</code></pre></div><h3 id="pipe">Pipe</h3>
 <p><code>{{text | linkify}}</code></p>
 <div><pre class="line-numbers"><code class="language-html">&lt;span [innerHTML]=&quot;&#39;Linkify the following URL: https://github.com/anthonynahas/ngx-linkifyjs and share it &lt;3&#39; | linkify&quot;&gt;&lt;/span&gt;</code></pre></div><p><strong>result</strong>: Linkify the following URL: <a href="https://github.com/anthonynahas/ngx-linkifyjs">https://github.com/anthonynahas/ngx-linkifyjs</a> and share it &lt;3</p>
+<p>if you prefer to provide your own option to the <code>pipe</code>, you can use it like the following:</p>
+<ul>
+<li><code>{{text | linkify: &#39;options&#39; }}</code> </li>
+<li><code>{{text | linkify: &#39;{/*your options*/}&#39; }}</code> </li>
+<li><code>{{text | linkify: &#39;{target {url: &quot;_self&quot; }}&#39; }}</code></li>
+</ul>
 <h3 id="service">Service</h3>
 <p>Inject the <code>NgxLinkifyjsService</code> service</p>
 <div><pre class="line-numbers"><code class="language-typescript">import {NgxLinkifyjsService, Link, LinkType} from &#39;ngx-linkifyjs&#39;;
 
 constructor(public linkifyService: NgxLinkifyjsService) {
  } 
-}</code></pre></div><h4 id="linkify-method"><code>linkify</code> method</h4>
-<div><pre class="line-numbers"><code class="language-typescript">import {NgxLinkifyjsService, Link, LinkType} from &#39;ngx-linkifyjs&#39;;
+}</code></pre></div><a name="linkify_method"/>
+
+<h4 id="linkify-text-string-options-ngxlinkifyoptions-string">linkify <em>(text: string, options?: NgxLinkifyOptions): string</em></h4>
+<p>Convert a basic text string to a valid linkified text</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><strong><code>text</code></strong> : <em><code>String</code></em> Text to linkify --&gt; to convert with links</li>
+<li><strong><code>options</code></strong> : <em><code>NgxLinkifyjsService</code></em> options to pass it to the linkifyjs library and it&#39;s optional</li>
+</ul>
+<p><strong>Returns</strong> <em><code>String</code></em>  converted text with links</p>
+<div><pre class="line-numbers"><code class="language-typescript">import {NgxLinkifyjsService, Link, LinkType, NgxLinkifyOptions} from &#39;ngx-linkifyjs&#39;;
 
 constructor(public linkifyService: NgxLinkifyjsService) {
+
+  const options: NgxLinkifyOptions =
+     {
+      className: &#39;linkifiedYES&#39;,
+      target : {
+          url : &#39;_self&#39;
+        }
+      };
+
   this.linkifyService.linkify(&#39;For help with GitHub.com, please email support&#64;github.com&#39;);
-  // result --&gt; see below
+  // result 1 --&gt; see below
+
+  this.linkifyService.linkify(&#39;For help with GitHub.com, please email support&#64;github.com&#39;, options);
+    // result 2 --&gt; see below
  } 
-}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">&#39;For help with &lt;a href=\&quot;http://github.com\&quot; class=\&quot;linkified\&quot; target=\&quot;_blank\&quot;&gt;GitHub.com&lt;/a&gt;, please email &lt;a href=\&quot;mailto:support&#64;github.com\&quot; class=\&quot;linkified\&quot;&gt;support&#64;github.com&lt;/a&gt;&#39;</code></pre></div><h4 id="find-method"><code>find</code> method</h4>
+}</code></pre></div><p>result 1</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#39;For help with &lt;a href=\&quot;http://github.com\&quot; class=\&quot;linkified\&quot; target=\&quot;_blank\&quot;&gt;GitHub.com&lt;/a&gt;, please email &lt;a href=\&quot;mailto:support&#64;github.com\&quot; class=\&quot;linkified\&quot;&gt;support&#64;github.com&lt;/a&gt;&#39;</code></pre></div><p>result 2</p>
+<div><pre class="line-numbers"><code class="language-typescript">&#39;For help with &lt;a href=\&quot;http://github.com\&quot; class=\&quot;linkifiedYES\&quot; target=\&quot;_self\&quot;&gt;GitHub.com&lt;/a&gt;, please email &lt;a href=\&quot;mailto:support&#64;github.com\&quot; class=\&quot;linkifiedYES\&quot;&gt;support&#64;github.com&lt;/a&gt;&#39;</code></pre></div><h4 id="find-method"><code>find</code> method</h4>
+<p>Finds all links in the given string</p>
+<p><strong>Params</strong></p>
+<ul>
+<li><strong><code>text</code></strong> : <em><code>String</code></em> search text string</li>
+</ul>
+<p><strong>Returns</strong> <em><code>Array&lt;Link&gt;</code></em> List of links where each element is a hash with properties type, value, and href:</p>
+<ul>
+<li><strong>type</strong> is the type of entity found. Possible values are<ul>
+<li><code>&#39;url&#39;</code></li>
+<li><code>&#39;email&#39;</code></li>
+<li><code>&#39;hashtag&#39;</code> (if Hashtag is enabled via config/default <code>true</code>)</li>
+<li><code>&#39;mention&#39;</code> (if Mention is enabled via config/default <code>true</code>)</li>
+</ul>
+</li>
+<li><strong>value</strong> is the original entity substring.</li>
+<li><strong>href</strong> should be the value of this link&#39;s <code>href</code> attribute.</li>
+</ul>
 <div><pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &#39;&#64;angular/core&#39;;
 import {NgxLinkifyjsService, Link, LinkType} from &#39;ngx-linkifyjs&#39;;
 
@@ -155,7 +230,8 @@ export class HomeComponent {
     // result - output --&gt; see below 
   }
 
-}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">[
+}</code></pre></div><div><pre class="line-numbers"><code class="language-typescript">// Result
+[
   {
     type: LinkType.URL,
     value: &#39;github.com&#39;,
@@ -167,6 +243,12 @@ export class HomeComponent {
     href: &#39;mailto:test&#64;example.com&#39;
   }
 ]</code></pre></div><h4 id="test-method"><code>test</code> method</h4>
+<p>Is the given string a link? Not to be used for strict validation - See <a href="caveats.html">Caveats</a></p>
+<p><strong>Params</strong></p>
+<ul>
+<li><strong><code>value</code></strong> : <em><code>String</code></em> |  <em><code>Array&lt;String&gt;</code></em>  Test string</li>
+</ul>
+<p><strong>Returns</strong> <em><code>Boolean</code></em></p>
 <div><pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &#39;&#64;angular/core&#39;;
 import {NgxLinkifyjsService} from &#39;ngx-linkifyjs&#39;;
 
@@ -204,18 +286,16 @@ export class AppModule {
 <ul>
 <li><p><a href="https://github.com/AnthonyNahas/ngx-linkifyjs.git">clone this repo</a> by running</p>
 <div><pre class="line-numbers"><code class="language-bash">$ git clone https://github.com/AnthonyNahas/ngx-linkifyjs.git</code></pre></div></li>
-<li><p>link the ngx-linkifyjs package</p>
+<li><p>setup the ngx-linkifyjs package</p>
 </li>
 </ul>
-<div><pre class="line-numbers"><code class="language-bash">$ gulp link</code></pre></div><ul>
+<div><pre class="line-numbers"><code class="language-bash">$ gulp steup</code></pre></div><ul>
 <li><p>navigate to the demo app directory</p>
 <div><pre class="line-numbers"><code class="language-bash">$ cd demo</code></pre></div></li>
-<li><p>install the dependencies</p>
-<div><pre class="line-numbers"><code class="language-bash">$ npm i</code></pre></div></li>
-<li><p>run/start/serve the app</p>
-<div><pre class="line-numbers"><code class="language-bash">$ npm run start</code></pre></div><p>or</p>
-<div><pre class="line-numbers"><code class="language-bash">$ ng serve --open</code></pre></div></li>
-<li>the app is now hosted by <code>http://localhost:4200/</code></li>
+<li><p>install the dependencies and run the app locally</p>
+<div><pre class="line-numbers"><code class="language-bash">$ npm i &amp;&amp; npm start</code></pre></div></li>
+<li><p>the app is now hosted by <code>http://localhost:4200/</code></p>
+</li>
 </ul>
 <hr>
 <a name="other-angular-libraries"/>

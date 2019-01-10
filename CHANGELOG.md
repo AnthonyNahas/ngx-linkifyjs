@@ -1,3 +1,22 @@
+# [1.3.0](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.2.2...v1.3.0) (2019-01-10)
+
+
+### Bug Fixes
+
+* **demo:** upgraded angular to v7.2.0 ([d5806cb](https://github.com/anthonynahas/ngx-linkifyjs/commit/d5806cb))
+* **package:** changed the type of value as argument to string in `NgxLinkifyjsPipe` ([2baea51](https://github.com/anthonynahas/ngx-linkifyjs/commit/2baea51))
+* **package:** removed unused import statement in  `NgxLinkifyjsPipe` ([29f0437](https://github.com/anthonynahas/ngx-linkifyjs/commit/29f0437))
+* **package:** removed unwanted logs ([b442f03](https://github.com/anthonynahas/ngx-linkifyjs/commit/b442f03))
+* **package:** upgraded angular to v7.2.0 ([7e6bbf3](https://github.com/anthonynahas/ngx-linkifyjs/commit/7e6bbf3))
+
+
+### Features
+
+* **package:** ability to pass an option object to linkifyjs [#44](https://github.com/anthonynahas/ngx-linkifyjs/issues/44) ([8d46fe6](https://github.com/anthonynahas/ngx-linkifyjs/commit/8d46fe6))
+* **package:** added `NgxLinkifyOptions` interface ([53ea407](https://github.com/anthonynahas/ngx-linkifyjs/commit/53ea407))
+
+
+
 ## [1.2.2](https://github.com/anthonynahas/ngx-linkifyjs/compare/v1.2.1...v1.2.2) (2018-11-26)
 
 

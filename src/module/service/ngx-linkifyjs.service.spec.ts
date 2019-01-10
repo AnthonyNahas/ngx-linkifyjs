@@ -60,8 +60,33 @@ describe('NgxLinkifyjsService', () => {
   // linkify function
   it('should linkify the provided text - 1 link and 1 email', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
     const result: string = service.linkify('For help with GitHub.com, please email support@github.com');
-    expect(result).toEqual('For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
-      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>');
+    const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
+      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>';
+
+    expect(result).toEqual(expectedResult);
+  }));
+
+  // linkify function
+  it('should linkify the provided text with providing an empty object option', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: string = service.linkify('For help with GitHub.com, please email support@github.com', null);
+
+    const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
+      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>';
+
+    expect(result).toEqual(expectedResult);
+  }));
+
+  // linkify function
+  it('should the target attribute not equal to _blank', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+    const result: string = service.linkify('For help with GitHub.com, please email support@github.com', {target: {url: '_self'}});
+
+    const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
+      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>';
+
+    expect(result).not.toEqual(expectedResult);
+
+    expect(result).not.toContain('_blank');
+    expect(result).toContain('_self');
   }));
 
   // find function

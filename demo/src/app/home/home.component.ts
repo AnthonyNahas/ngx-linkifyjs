@@ -28,11 +28,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Home | ngx-linkifyjs');
-    // const result: Link[] = this.linkifyService.find('Linkify is #super #rad2015');
-    // console.log('links = ', result);
-
-    // const result2: string = this.linkifyService.linkify('For help with GitHub.com, please email support@github.com');
-    // console.log('links2 = ', result2);
   }
 
   editOnStackBlitz() {

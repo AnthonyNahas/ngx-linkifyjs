@@ -15,6 +15,7 @@ export {Link} from './interfaces/ngx-linkifyjs.interface';
 import {NgxLinkifyjsConfig} from './interfaces/ngx-linkifyjs.interface';
 
 export {LinkType} from './enum/linktype.enum';
+export {NgxLinkifyOptions} from './interfaces/ngx-linkifyjs.interface';
 export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 

@@ -10,7 +10,6 @@ import {NgxLinkifyOptions} from '../..';
 export class NgxLinkifyjsPipe implements PipeTransform {
 
   transform(value: string, options?: NgxLinkifyOptions): string {
-    console.log('options: ', options);
     return value ? linkifyStr(value, options) : value;
   }
 

@@ -117,6 +117,38 @@ export class OtherModule {
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
+### Options
+
+`ngx-linkifyjs` provides an appropriate option interface called `NgxLinkifyOptions` to access [the native options of the linkifyjs library](https://soapbox.github.io/linkifyjs/docs/options.html)
+and all of them are optional
+- Default values
+
+```typescript
+
+import { NgxLinkifyOptions } from 'ngx-linkifyjs';
+
+  const options: NgxLinkifyOptions =
+   {
+    attributes: null,
+    className: 'linkified',
+    defaultProtocol: 'http',
+    events: null,
+    format: function (value, type) {
+      return value;
+    },
+    formatHref: function (href, type) {
+      return href;
+    },
+    ignoreTags: [],
+    nl2br: false,
+    tagName: 'a',
+    target: {
+      url: '_blank'
+    },
+    validate: true
+  };
+```
+
 ### Pipe
 
 `{{text | linkify}}`
@@ -126,6 +158,13 @@ Once the library is imported, you can use its components, directives and pipes i
 ```
 
 **result**: Linkify the following URL: [https://github.com/anthonynahas/ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs) and share it <3
+
+if you prefer to provide your own option to the `pipe`, you can use it like the following:
+
+- `{{text | linkify: 'options' }}` 
+- `{{text | linkify: '{/*your options*/}' }}` 
+- `{{text | linkify: '{target {url: "_self" }}' }}`
+
 
 ### Service
 
@@ -141,29 +180,48 @@ constructor(public linkifyService: NgxLinkifyjsService) {
 
 <a name="linkify_method"/>
 
-#### linkify _(text: string): string_
+#### linkify _(text: string, options?: NgxLinkifyOptions): string_
 
 Convert a basic text string to a valid linkified text
 
 **Params**
 
 *  **`text`** : _`String`_ Text to linkify --> to convert with links
+*  **`options`** : _`NgxLinkifyjsService`_ options to pass it to the linkifyjs library and it's optional
 
 **Returns** _`String`_  converted text with links
 
 
 ```typescript
-import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
+import {NgxLinkifyjsService, Link, LinkType, NgxLinkifyOptions} from 'ngx-linkifyjs';
 
 constructor(public linkifyService: NgxLinkifyjsService) {
+  
+  const options: NgxLinkifyOptions =
+     {
+      className: 'linkifiedYES',
+      target : {
+          url : '_self'
+        }
+      };
+  
   this.linkifyService.linkify('For help with GitHub.com, please email support@github.com');
-  // result --> see below
+  // result 1 --> see below
+  
+  this.linkifyService.linkify('For help with GitHub.com, please email support@github.com', options);
+    // result 2 --> see below
  } 
 }
 ```
 
+result 1
 ```typescript
 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>'
+```
+
+result 2
+```typescript
+'For help with <a href=\"http://github.com\" class=\"linkifiedYES\" target=\"_self\">GitHub.com</a>, please email <a href=\"mailto:support@github.com\" class=\"linkifiedYES\">support@github.com</a>'
 ```
 
 #### `find` method

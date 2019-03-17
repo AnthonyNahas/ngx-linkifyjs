@@ -273,6 +273,17 @@ gulp.task('build', ['clean'], (cb) => {
   runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
 });
 
+gulp.task('build:schematics', () => {
+  // return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer`, {cwd: `${config.demoDir}`});
+  return execCmd('tsc', '-p src/schematics/tsconfig.json').then(exitCode => {
+    if (exitCode === 0) {
+      return execCmd('webpack', '--config src/schematics/webpack.config.js --progress --colors');
+    } else {
+      Promise.reject(1);
+    }
+  });
+});
+
 // Same as 'build' but without cleaning temp folders (to avoid breaking demo app, if currently being served)
 gulp.task('build-watch', (cb) => {
   runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
@@ -299,10 +310,10 @@ gulp.task('build:watch-fast', ['build-watch-no-tests'], () => {
 /////////////////////////////////////////////////////////////////////////////
 
 // Prepare 'dist' folder for publication to NPM
-gulp.task('npm-package', (cb) => {
+gulp.task('npm-package', ['build:schematics'], (cb) => {
   let pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
   let targetPkgJson = {};
-  let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage'];
+  let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage', 'schematics'];
 
   targetPkgJson['name'] = config.libraryName;
 

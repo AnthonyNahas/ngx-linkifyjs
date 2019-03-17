@@ -60,9 +60,16 @@ View all the directives in action at https://anthonynahas.github.io/ngx-linkifyj
 
 <a name="installation"/>
 
-## Installation
+# Installation
 
-Install above dependencies via *npm*. 
+## 1. Install via *ng add*. (Recommended)
+
+Now add the library via the `angular schematics`
+```shell
+ng add ngx-linkifyjs
+```
+
+## 2. Install via *npm*. (Alternative) 
 
 Now install `ngx-linkifyjs` via:
 ```shell

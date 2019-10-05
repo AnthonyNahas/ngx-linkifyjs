@@ -45,7 +45,7 @@
     "core-js": "^2.6.5",
     "font-awesome": "^4.7.0",
     "linkifyjs": "^2.1.8",
-    "ngx-markdown": "^7.1.4",
+    "ngx-markdown": "^8.1.2",
     "rxjs": "^6.4.0",
     "zone.js": "^0.8.29"
   },

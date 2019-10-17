@@ -43,7 +43,7 @@
     "linkifyjs": "^2.1.8"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^7.3.6",
+    "@angular-devkit/schematics": "^8.3.12",
     "@angular/animations": "^7.2.9",
     "@angular/compiler": "^7.2.9",
     "@angular/compiler-cli": "^7.2.9",

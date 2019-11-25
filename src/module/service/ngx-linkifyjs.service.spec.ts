@@ -7,7 +7,8 @@ import * as hashtag from 'linkifyjs/plugins/hashtag';
 import * as mention from 'linkifyjs/plugins/mention';
 
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
-import {Link, LinkType} from '../..';
+import {Link} from '../interfaces/ngx-linkifyjs.interface';
+import {LinkType} from '../enum/linktype.enum';
 
 describe('NgxLinkifyjsService without importing hashtag/mention', () => {
   beforeEach(() => {
@@ -67,14 +68,15 @@ describe('NgxLinkifyjsService', () => {
   }));
 
   // linkify function
-  it('should linkify the provided text with providing an empty object option', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
-    const result: string = service.linkify('For help with GitHub.com, please email support@github.com', null);
+  it('should linkify the provided text with providing an empty object option',
+    inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+      const result: string = service.linkify('For help with GitHub.com, please email support@github.com', null);
 
-    const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
-      'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>';
+      const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
+        'please email <a href=\"mailto:support@github.com\" class=\"linkified\">support@github.com</a>';
 
-    expect(result).toEqual(expectedResult);
-  }));
+      expect(result).toEqual(expectedResult);
+    }));
 
   // linkify function
   it('should the target attribute not equal to _blank', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {

@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 // @ts-ignore
 import * as linkify from 'linkifyjs';
-import {Link} from '../..';
-import {NgxLinkifyOptions} from '../interfaces/ngx-linkifyjs.interface';
+import {Link, NgxLinkifyOptions} from '../interfaces/ngx-linkifyjs.interface';
 
 @Injectable()
 export class NgxLinkifyjsService {

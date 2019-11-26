@@ -65,7 +65,7 @@
     "codelyzer": "^4.5.0",
     "express": "^4.17.1",
     "greenkeeper-lockfile": "^1.15.1",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.0",
     "jest": "^23.6.0",
     "jest-preset-angular": "^6.0.2",
     "protractor": "^5.4.2",

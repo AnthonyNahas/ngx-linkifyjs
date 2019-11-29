@@ -7,7 +7,8 @@ import * as hashtag from 'linkifyjs/plugins/hashtag';
 import * as mention from 'linkifyjs/plugins/mention';
 
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
-import {Link, LinkType} from '..';
+import {LinkType} from '../enum/linktype.enum';
+import {Link} from '../interfaces/ngx-linkifyjs.interface';
 
 describe('NgxLinkifyjsService without importing hashtag/mention', () => {
   beforeEach(() => {

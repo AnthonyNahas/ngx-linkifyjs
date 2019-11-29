@@ -81,8 +81,8 @@ npm i -s ngx-linkifyjs
 >**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.
 In your systemjs config file, `map` needs to tell the System loader where to look for `ngx-linkifyjs`:
 ```js
-map: {
-  'ngx-linkifyjs': 'node_modules/ngx-linkifyjs/bundles/ngx-linkifyjs.umd.js',
+{
+  'ngx-linkifyjs';: 'node_modules/ngx-linkifyjs/bundles/ngx-linkifyjs.umd.js',
 }
 ```
 ---
@@ -180,7 +180,7 @@ Inject the `NgxLinkifyjsService` service
 ```typescript
 import {NgxLinkifyjsService, Link, LinkType} from 'ngx-linkifyjs';
 
-constructor(public linkifyService: NgxLinkifyjsService) {
+constructor(public; NgxLinkifyjsService;) {
  } 
 }
 ```
@@ -202,7 +202,7 @@ Convert a basic text string to a valid linkified text
 ```typescript
 import {NgxLinkifyjsService, Link, LinkType, NgxLinkifyOptions} from 'ngx-linkifyjs';
 
-constructor(public linkifyService: NgxLinkifyjsService) {
+constructor(public; NgxLinkifyjsService;) {
   
   const options: NgxLinkifyOptions =
      {

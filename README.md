@@ -375,6 +375,7 @@ $ npm i && npm start
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
+- [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)

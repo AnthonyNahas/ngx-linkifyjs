@@ -68,7 +68,8 @@ describe('NgxLinkifyjsService', () => {
   }));
 
   // linkify function
-  it('should linkify the provided text with providing an empty object option', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+  it('should linkify the provided text with providing an empty object option',
+    inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
     const result: string = service.linkify('For help with GitHub.com, please email support@github.com', null);
 
     const expectedResult = 'For help with <a href=\"http://github.com\" class=\"linkified\" target=\"_blank\">GitHub.com</a>, ' +
@@ -92,9 +93,9 @@ describe('NgxLinkifyjsService', () => {
 
   // find function
 
-  it('should always return an array after finding a link', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
-    expect(service.find('Any links to github.com here?')).toBeInstanceOf(Array);
-  }));
+  // it('should always return an array after finding a link', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
+  //   expect(service.find('Any links to github.com here?')).toBeInstanceOf(Array);
+  // }));
 
   it('should return an empty array if no links are provided', inject([NgxLinkifyjsService], (service: NgxLinkifyjsService) => {
     expect(service.find('Any links to github here?').length).toEqual(0);

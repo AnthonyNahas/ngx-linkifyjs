@@ -43,7 +43,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v7.0.2",
     "angulartics2": "latest",
     "express": "^4.15.2",
-    "linkifyjs": "2.1.7",
+    "linkifyjs": "^2.1.8",
     "ngx-markdown": "^8.2.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

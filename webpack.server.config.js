@@ -7,7 +7,12 @@ module.exports = {
   mode: 'none',
   entry: {
     // This is our Express server for Dynamic universal
-    server: './server.ts'
+    server: './server.ts',
+    // This is an example of Static prerendering (generative)
+    prerender: './prerender.ts'
+  },
+  externals: {
+    './dist/server/main': 'require("./server/main")'
   },
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
@@ -20,6 +25,7 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
+    noParse: /polyfills-.*\.js/,
     rules: [
       { test: /\.ts$/, loader: 'ts-loader' },
       {

@@ -47,12 +47,11 @@
     "test": "../../node_modules/.bin/jest --coverage",
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
   },
-
   "peerDependencies": {
     "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/core": "^8.2.14",
+    "linkifyjs": "2.1.7"
   },
-
   "engines": {
     "node": ">=10.0.0"
   },

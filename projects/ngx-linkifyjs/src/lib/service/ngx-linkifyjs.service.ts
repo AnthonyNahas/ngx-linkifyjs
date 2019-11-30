@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 // @ts-ignore
 import * as linkify from 'linkifyjs';
+// @ts-ignore
+import * as linkifyStr from 'linkifyjs/string';
+// @ts-ignore
 import {Link, NgxLinkifyOptions} from '../interfaces/ngx-linkifyjs.interface';
 
 @Injectable()
@@ -15,8 +18,8 @@ export class NgxLinkifyjsService {
    * @param options - options to pass it to the linkifyjs library
    */
   linkify(text: string, options?: NgxLinkifyOptions): string {
-    // @ts-ignore
-    return text.linkify(options);
+    return linkifyStr(text, options);
+    // return '';
   }
 
   /**

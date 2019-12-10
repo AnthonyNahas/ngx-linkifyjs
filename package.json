@@ -40,7 +40,7 @@
     "@angular/router": "~8.2.13",
     "@briebug/jest-schematic": "^2.1.1",
     "@nguniversal/express-engine": "^7.0.2",
-    "@nguniversal/module-map-ngfactory-loader": "v7.0.2",
+    "@nguniversal/module-map-ngfactory-loader": "8.2.6",
     "angular-cli-ghpages": "^0.6.0",
     "angulartics2": "latest",
     "express": "^4.15.2",

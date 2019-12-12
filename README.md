@@ -118,6 +118,26 @@ export class OtherModule {
 }
 ```
 
+Or if you prefer lazy load the module you can just inject the config token in your root module
+```typescript
+import { NgxLinkifyjsConfigToken } from 'ngx-linkifyjs';
+
+@NgModule({
+  declarations: [AppComponent, ...],
+  imports: [...],
+  providers:[
+    {
+      provide: NgxLinkifyjsConfigToken,
+      useValue: {enableHash: true, enableMention: true}
+    },
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
+
+ 
 <a name="usage"/>
 
 ## Usage

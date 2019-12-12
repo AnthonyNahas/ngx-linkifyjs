@@ -1,19 +1,19 @@
 import {inject, TestBed} from '@angular/core/testing';
-// @ts-ignore
-import * as linkify from 'linkifyjs';
-// @ts-ignore
-import * as hashtag from 'linkifyjs/plugins/hashtag';
-// @ts-ignore
-import * as mention from 'linkifyjs/plugins/mention';
 
 import {NgxLinkifyjsService} from './ngx-linkifyjs.service';
+import {NgxLinkifyjsConfigToken} from './tokens';
 import {LinkType} from '../enum/linktype.enum';
 import {Link} from '../interfaces/ngx-linkifyjs.interface';
 
 describe('NgxLinkifyjsService without importing hashtag/mention', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgxLinkifyjsService]
+      providers: [
+        {
+          provide: NgxLinkifyjsConfigToken,
+          useValue: {enableHash: false, enableMention: false}
+        },
+        NgxLinkifyjsService]
     });
   });
 
@@ -43,14 +43,14 @@ describe('NgxLinkifyjsService without importing hashtag/mention', () => {
 
 describe('NgxLinkifyjsService', () => {
 
-  beforeAll(() => {
-    hashtag(linkify);
-    mention(linkify);
-  });
-
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgxLinkifyjsService]
+      providers: [
+        {
+          provide: NgxLinkifyjsConfigToken,
+          useValue: {enableHash: true, enableMention: true}
+        },
+        NgxLinkifyjsService]
     });
   });
 

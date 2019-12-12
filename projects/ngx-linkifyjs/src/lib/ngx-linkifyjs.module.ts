@@ -1,13 +1,8 @@
 import {CommonModule} from '@angular/common';
-import {Inject, InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
-// @ts-ignore
-import * as linkify from 'linkifyjs';
-// @ts-ignore
-import hashtag from 'linkifyjs/plugins/hashtag';
-// @ts-ignore
-import mention from 'linkifyjs/plugins/mention';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 
-import {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
+
+import {NgxLinkifyjsConfigToken} from './service/tokens';
 import {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
 
 // Export module's public API
@@ -17,9 +12,7 @@ import {NgxLinkifyjsConfig} from './interfaces/ngx-linkifyjs.interface';
 export {LinkType} from './enum/linktype.enum';
 export {NgxLinkifyOptions} from './interfaces/ngx-linkifyjs.interface';
 export {NgxLinkifyjsPipe} from './pipes/ngx-linkifyjs.pipe';
-export {NgxLinkifyjsService} from './service/ngx-linkifyjs.service';
 
-export const NgxLinkifyjsConfigToken = new InjectionToken<NgxLinkifyjsConfig>('NgxLinkifyjsConfig');
 export const DEFAULT_CONFIG: NgxLinkifyjsConfig = {enableHash: true, enableMention: true};
 
 @NgModule({
@@ -36,7 +29,6 @@ export class NgxLinkifyjsModule {
       ngModule: NgxLinkifyjsModule,
       providers:
         [
-          NgxLinkifyjsService,
           {
             provide: NgxLinkifyjsConfigToken,
             useValue: config
@@ -44,16 +36,4 @@ export class NgxLinkifyjsModule {
         ]
     };
   }
-
-  constructor(@Inject(NgxLinkifyjsConfigToken)
-              public config: NgxLinkifyjsConfig) {
-    if (config.enableHash) {
-      hashtag(linkify);
-    }
-
-    if (config.enableMention) {
-      mention(linkify);
-    }
-  }
-
 }

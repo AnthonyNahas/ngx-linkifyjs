@@ -1,15 +1,31 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 // @ts-ignore
 import * as linkify from 'linkifyjs';
+// @ts-ignore
+import hashtag from 'linkifyjs/plugins/hashtag';
+// @ts-ignore
+import mention from 'linkifyjs/plugins/mention';
 // @ts-ignore
 // import * as linkifyStr from 'linkifyjs/string';
 import linkifyStr from 'linkifyjs/string';
 // @ts-ignore
-import {Link, NgxLinkifyOptions} from '../interfaces/ngx-linkifyjs.interface';
+import {Link, NgxLinkifyjsConfig, NgxLinkifyOptions} from '../interfaces/ngx-linkifyjs.interface';
+import {NgxLinkifyjsConfigToken} from './tokens';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NgxLinkifyjsService {
-  constructor() {
+  constructor(@Inject(NgxLinkifyjsConfigToken)
+              public config: NgxLinkifyjsConfig) {
+    if (config.enableHash) {
+      console.log('hashtag', hashtag);
+      hashtag(linkify);
+    }
+
+    if (config.enableMention) {
+      mention(linkify);
+    }
   }
 
   /**

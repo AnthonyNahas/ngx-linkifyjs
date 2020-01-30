@@ -44,7 +44,7 @@
     "angular-cli-ghpages": "^0.6.0",
     "angulartics2": "latest",
     "express": "^4.15.2",
-    "linkifyjs": "^2.1.8",
+    "linkifyjs": "2.1.8",
     "ngx-markdown": "^8.2.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

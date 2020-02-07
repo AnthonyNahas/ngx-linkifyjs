@@ -33,7 +33,7 @@
     "@angular/core": "~8.2.13",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "~8.2.13",
-    "@angular/material": "^8.2.3",
+    "@angular/material": "^9.0.0",
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/platform-server": "~8.2.13",

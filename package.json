@@ -45,7 +45,7 @@
     "angulartics2": "latest",
     "express": "^4.15.2",
     "linkifyjs": "^2.1.8",
-    "ngx-markdown": "^8.2.1",
+    "ngx-markdown": "^9.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

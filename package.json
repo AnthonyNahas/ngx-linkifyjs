@@ -57,7 +57,7 @@
     "@angular/compiler-cli": "~8.2.13",
     "@angular/language-service": "~8.2.13",
     "@compodoc/compodoc": "^1.1.11",
-    "@release-it/conventional-changelog": "^1.1.0",
+    "@release-it/conventional-changelog": "1.1.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "24.0.23",
